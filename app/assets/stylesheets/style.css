@@ -1,0 +1,96 @@
+
+  .content-box{
+    float: center;
+    background: white; 
+    margin-top:7px;
+    /*padding:30px;*/
+    text-align: right;
+  }
+
+.english {
+  direction:LTR !important;
+  text-align: left !important;
+}
+
+.dropdown-menu {
+  text-align: right;
+}
+
+.btn-group .btn {
+  font-size: 22px;
+  background: #E9E2B4; /* Sand*/
+  color: #3e2e08; /*Dark brown*/
+}
+
+.fa {
+  font-size: 22px;
+}
+
+/* Tabs Styles Starts */
+
+  .tabs-panel{
+    margin-top:20px;
+    margin-bottom:20px;
+    color: #3e2e08; /*Dark brown*/
+  }
+  .tabs-panel.panel-smart{
+    Tabspadding:0;
+  }
+    .tabs-panel .nav-tabs{
+      font-size:21px;
+      border-bottom:2px solid #E9E2B4; /* Sand*/
+    }
+    .tabs-panel .nav-tabs > li{
+      float: right;
+      margin-bottom:0;
+    }
+    .tabs-panel .nav-tabs > li > a{
+      color: #2F542F; /* Green */
+      margin:0; 
+    }
+    .tabs-panel .nav-tabs > li > a {
+      border:1px solid #E9E2B4 !important; /* Sand*/
+    }
+    .tabs-panel .nav-tabs > li > a, 
+    .tabs-panel .btn, 
+    .tabs-panel .form-control{
+      -webkit-border-radius:0;
+         -moz-border-radius:0;
+              border-radius:0;
+    }
+    .tabs-panel .nav-tabs > li.active > a, 
+    .tabs-panel .nav-tabs > li.active > a:hover, 
+    .tabs-panel .nav-tabs > li.active > a:focus, 
+    .tabs-panel .nav > li > a:hover, 
+    .tabs-panel .nav > li > a:focus{
+      background:none;
+    }
+    .tabs-panel .nav-tabs > li > a, 
+    .tabs-panel .nav-tabs > li.active > a, 
+    .tabs-panel .nav-tabs > li.active > a:hover, 
+    .tabs-panel .nav-tabs > li.active > a:focus, 
+    .tabs-panel .nav-tabs > li > a:hover{
+      border:none;
+    }
+    .tabs-panel .nav-tabs > li.active, 
+    .tabs-panel .nav-tabs > li.active > a{
+      background: #E9E2B4; /* Sand*/
+      color:  #3e2e08; /*Dark brown*/
+    }
+    .tabs-panel .nav-tabs > li > a:hover{
+      background: #E9E2B4; /* Sand*/
+    }
+    .tabs-panel .tab-content{
+      padding:20px;
+      font-size:18px;
+    }
+    .tabs-panel label.control-label{
+      font-weight:normal;
+    }
+    .tabs-panel label.control-label.ratings{
+      padding-top:1px;
+    }
+    .tabs-panel .btn{
+      margin-left:-10px;
+    }
+    
