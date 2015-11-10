@@ -7,7 +7,7 @@
       %li
         בראשית - 1
       %li
-        בראשית - 2
+        בראשית - 2          
   %br
   .row
     .col-sm-6.pull-right
@@ -71,12 +71,16 @@
           %li
             %a{:href => "#tab-english", "data-toggle" => "tab"} English
           %li
+            %a{:href => "#tab-aramic", "data-toggle" => "tab"} ארמית
+          %li
             %a{:href => "#tab-interpretation", "data-toggle" => "tab"} פירוש           
         / Nav Tabs Ends
         / Tab Content Starts
         .tab-content.clearfix
           / Hebrow Starts
           #tab-hebrow.tab-pane.active              
+            = link_to nil do 
+              %i.fa.fa-volume-up
             %p              
               1. בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ׃ 
               וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהֹום וְרוּחַ אֱלֹהִים 
@@ -168,8 +172,15 @@
               %br
               21.   God created the great sea monsters and every living creature that moves, with which the waters swarmed after their kind, and every winged bird after its kind; and God saw that it was good.
           / English Ends
-          /  Interpretation start
+          / Aramic Starts
+          #tab-aramic.tab-pane.active 
+          / Aramic End 
+          / Interpretation start
           #tab-interpretation.tab-pane
           / Interpretation End
         / Tab Content Ends
       / Tabs Ends           
+.pull-left
+  .btn-group
+    .btn
+      גרסה להדפסה
