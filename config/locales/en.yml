@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  language: "Language"
+  choose_chapter: "Choose Chapter"
+  genesis: 'Genesis'
+  exodus: 'Exodus'
+  next_chapter: 'Next Chapter'
+  prev_chapter: 'Prev Chapter'

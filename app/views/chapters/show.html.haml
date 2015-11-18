@@ -1,0 +1,124 @@
+%header#header-area
+  / Header Top Starts
+  .header-top.navbar-fixed-top
+    .row
+      .col-md-3
+        %ul.nav.navbar-nav.pull-left
+          .btn-group
+            %button.btn.btn-link.dropdown-toggle{"data-toggle" => "dropdown"}
+              = t :language
+              %i.fa.fa-caret-down
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#", :tabindex => "-1"} السموات
+              %li
+                %a{:href => "#", :tabindex => "-1"} עברית  
+              %li
+                %a{:href => "#", :tabindex => "-1"} English        
+      .col-md-5.jcol-md-offset-1
+        .next-prev-btn-group 
+          .row
+            .col-md-4.pull-right
+              .pull-right        
+                = link_to chapter_path(@chapter.prev) do
+                  = t :prev_chapter
+                  %i.fa.fa-arrow-right
+            .col-md-4.pull-right      
+              .chapter-title
+                = t @chapter.book.to_sym 
+                %span - #{@chapter.order.to_s}            
+            .col-md-4.pull-right 
+              .pull-left    
+                = link_to chapter_path(@chapter.next) do
+                  %i.fa.fa-arrow-left  
+                  = t :next_chapter             
+      .col-md-3.col-md-offset-1
+        .btn-group
+          %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            = t :choose_chapter
+            %span.caret
+          %ul.dropdown-menu
+            - Chapter.all_ordered.each do |chapter|
+              %li
+                = link_to chapter_path(chapter) do
+                  = t @chapter.book.to_sym
+                  %span - #{chapter.order.to_s}      
+  %br
+.content-box
+  .row
+    .col-sm-4.pull-right
+      %br
+      %br
+      %br
+      .row
+        .col-md-6.pull-right
+          .title
+            نور #{display_book_name(@chapter.book, 'ar')} - نور #{@chapter.order}
+        .col-md-6.pull-right
+          .audio
+            - if false
+              //%audio{:controls => "", :src => @chapter.audio_arabic, :type => "audio/mpeg"}
+              %audio{:controls => "", :src => "/assets/audio/Maya - Are U with me.mp3", :type => "audio/mpeg"}
+                Your browser does not support the audio element.
+      - @chapter.ordered_sentences.each do |sentence|
+        .sentence{:class => calculate_sentence_height(sentence)}
+          #{sentence.order.to_s}. #{sentence.arabic}
+    .col-sm-4.pull-right
+      %br
+      %br
+      %br
+      .row
+        .col-md-12.pull-right
+          .title
+            ספר #{display_book_name(@chapter.book, 'he')} - פרק #{@chapter.order}
+        .col-md-6.pull-right
+          .audio
+            - if false
+              //%audio{:controls => "", :src => @chapter.audio_arabic, :type => "audio/mpeg"}
+              %audio{:controls => "", :src => "/assets/audio/Maya - Are U with me.mp3", :type => "audio/mpeg"}
+                Your browser does not support the audio element.
+      - @chapter.ordered_sentences.each do |sentence|
+        .sentence{:class => calculate_sentence_height(sentence)}
+          #{sentence.order.to_s}. #{sentence.hebrow}    
+    .col-sm-4.pull-right
+      / Tabs Starts
+      .tabs-panel
+        / Nav Tabs Starts
+        %ul.nav.nav-tabs
+          %li.active
+            %a{:href => "#tab-aramic", "data-toggle" => "tab"} ארמית          
+          %li
+            %a{:href => "#tab-english", "data-toggle" => "tab"} English
+          %li
+            %a{:href => "#tab-interpretation", "data-toggle" => "tab"} פירוש           
+        / Nav Tabs Ends
+        / Tab Content Starts
+        .tab-content.clearfix
+          / Aramic Starts
+          #tab-aramic.tab-pane.active
+            .title
+              ספר #{display_book_name(@chapter.book, 'he')} - פרק #{@chapter.order}
+            - @chapter.ordered_sentences.each do |sentence|
+              .sentence{:class => calculate_sentence_height(sentence)}
+                #{sentence.order.to_s}. #{sentence.aramic}          
+          / Aramic End           
+          / English Starts
+          #tab-english.tab-pane
+            .title.english
+              Book of #{display_book_name(@chapter.book, 'en')} - Chapter #{@chapter.order}            
+            .english.small-font
+              - @chapter.ordered_sentences.each do |sentence|
+                .sentence{:class => calculate_sentence_height(sentence)}
+                  #{sentence.order.to_s}. #{sentence.english}
+          / English Ends
+          / Interpretation start
+          #tab-interpretation.tab-pane
+            .audio
+            = @chapter.meaning
+          / Interpretation End
+        / Tab Content Ends
+      / Tabs Ends           
+.pull-left
+  .btn-group
+    .btn
+      גרסה להדפסה

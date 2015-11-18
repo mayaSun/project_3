@@ -1,4 +1,50 @@
+body{
+  background: white;
+  color: #3e2e08; /*Dark brown*/
+  font-size: 18px;
+}
 
+/* Standard Styles Starts */
+
+a:hover{
+}
+a:focus{
+  outline:none;
+}
+h1, h2, h3, h4, h5, h6{
+  color: #3e2e08; /*Dark brown*/
+}
+
+h1{
+  font-size:38px;
+}
+h2{
+  font-size:35px;
+}
+h3{
+  font-size:28px;
+}
+h4{
+  font-size:24px;
+}
+h5{
+  font-size:18px;
+}
+h6{
+  font-size:18px;
+}
+p{
+  font-size:18px;
+}
+
+  .header-top{
+    direction:LTR;
+    background: -webkit-linear-gradient(#40E0D0, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#40E0D0, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#40E0D0, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#40E0D0, white); /* Standard syntax */
+    color: #2F542F; /* Green */
+  }
   .content-box{
     float: center;
     background: white; 
@@ -6,6 +52,11 @@
     /*padding:30px;*/
     text-align: right;
   }
+
+ .content-box .title {
+  font-size: 22px;
+  color: #2F542F; /* Green */
+ }
 
 .english {
   direction:LTR !important;
@@ -17,7 +68,7 @@
 }
 
 .btn-group .btn {
-  font-size: 22px;
+  font-size: 18px;
   background: #E9E2B4; /* Sand*/
   color: #3e2e08; /*Dark brown*/
 }
@@ -81,8 +132,12 @@
       background: #E9E2B4; /* Sand*/
     }
     .tabs-panel .tab-content{
-      padding:20px;
+      padding-right: 0px;
       font-size:18px;
+    }
+
+    .tabs-panel .tab-content .audio {
+      height: 30px;
     }
     .tabs-panel label.control-label{
       font-weight:normal;
@@ -93,4 +148,102 @@
     .tabs-panel .btn{
       margin-left:-10px;
     }
-    
+
+
+/* Messages */
+.alert {
+  padding:0.8em;
+  width: 350px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  background: #E9E2B4;  /*Sande */
+  color: #3e2e08; /*Dark brown*/
+}
+
+.alert-error {
+  color: #ff4444; /*Red*/
+}
+
+
+/* Panel */
+  .panel-smart{
+    font-size: 18px;
+    text-align: right;
+    background: white;
+    margin-bottom: 0px; 
+    color: #3e2e08; /*Dark brown*/    
+  }
+    .panel-smart .panel-heading{
+      padding:5px 0 15px 0;
+      color: #2F542F; /* Green */
+      border-bottom:1px solid #3e2e08; /*Dark brown*/ 
+    }
+    .panel-smart .panel-title{
+      color: #2F542F; /* Green */
+      font-size:24px;
+      padding-right: 20px;
+    }
+
+    .panel-smart .panel-body{
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-right: 20px;
+      color: #3e2e08; /*Dark brown*/
+    }
+
+    .panel-smart .panel-body .sub-title{ 
+      font-size:22px;
+      margin-top: 15px;
+      margin-bottom: 25px;
+    }
+
+/* line hight*/
+.one-line {
+  height: 30px;
+}   
+
+.two-lines {
+  height: 60px;
+} 
+
+.three-lines {
+  height: 90px;
+} 
+
+.small-font {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.next-prev-btn-group {
+  margin-left: 0px;
+  margin-top: 10px; 
+
+}
+
+.next-prev-btn-group .chapter-title{
+  margin: 1px 1px 1px 1px;
+  padding: 1px 1px 1px 1px;
+  font-size: 28px;
+}
+
+.next-prev-btn-group  a{
+  margin: 1px 1px 1px 1px;
+  color: #2F542F; /* Green */
+  padding: 1px 1px 1px 1px;
+}
+
+.next-prev-btn-group  a:hover{
+  color: #C9B538; /* Gold */
+  text-decoration: none;
+}
+
+audio {
+    background-color: #95B9C7 !important;
+}
+
+.btn {
+  -webkit-border-radius:5px;
+     -moz-border-radius:5px;
+      border-radius:5px;
+}
