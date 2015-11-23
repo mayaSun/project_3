@@ -10,11 +10,11 @@
               %i.fa.fa-caret-down
             %ul.dropdown-menu
               %li
-                %a{:href => "#", :tabindex => "-1"} السموات
+                = link_to 'السموات', set_language_path(locale: 'ar'), remote: true
               %li
-                %a{:href => "#", :tabindex => "-1"} עברית  
+                = link_to 'עברית', set_language_path(locale: 'he'), remote: true
               %li
-                %a{:href => "#", :tabindex => "-1"} English        
+                = link_to 'English', set_language_path(locale: 'en'), remote: true       
       .col-md-5.jcol-md-offset-1
         .next-prev-btn-group 
           .row

@@ -5,12 +5,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :set_admin , :is_admin?
 
-  before_action :set_locale
- 
-  def set_locale
-    I18n.locale = params[:locale] || :he
-  end
-
   def set_admin
     @admin = true
   end
