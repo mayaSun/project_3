@@ -16,7 +16,6 @@ class PagesController <ApplicationController
   end
 
   def set_language
-    Chapter.craete(book: 'genesis', order: 100)
     I18n.locale = :he
     respond_to do |format|
       format.js {render inline: "location.reload();" }
