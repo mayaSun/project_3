@@ -37,6 +37,10 @@ gem 'pg'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 
+group :production do
+  gem 'wkhtmltopdf-heroku'
+end
+
 group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
