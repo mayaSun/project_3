@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
  # ensure locale persists
   def default_url_options(options={})
-    I18n.locale = :he
+    {:locale => I18n.locale}
   end
 
 end
