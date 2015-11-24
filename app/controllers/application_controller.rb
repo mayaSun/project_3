@@ -13,5 +13,9 @@ class ApplicationController < ActionController::Base
     @admin == true
   end
 
+ # ensure locale persists
+  def default_url_options(options={})
+    {:locale => I18n.locale}
+  end
 
 end
