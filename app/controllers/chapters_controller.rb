@@ -52,6 +52,25 @@ class ChaptersController <ApplicationController
     redirect_to chapters_path
   end
 
+  def set_download_variables
+    @chapter = Chapter.find_by(slug: params[:id])
+    respond_to do |format|
+      format.html {render 'set_download_veriables', :layout => false  } 
+      format.js
+    end 
+  end
+
+  def download
+    @chapter = Chapter.find_by(slug: params[:id]) 
+    @versions = params[:versions]
+    if !@versions
+      flash[:error] = "you must select languages"
+    else
+      template = '/chapters/download_' + params[:versions].count.to_s + '_version'
+      render pdf: "file_name", template: template,layout: '/layouts/pdf-layout.html.haml', orientation: 'Landscape'
+    end
+  end
+
   private
 
   def chapter_params

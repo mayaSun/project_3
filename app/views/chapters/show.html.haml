@@ -53,7 +53,7 @@
       .row
         .col-md-6.pull-right
           .title
-            نور #{display_book_name(@chapter.book, 'ar')} - نور #{@chapter.order}
+            نور #{display_book_name(@chapter.book, 'arabic')} - نور #{@chapter.order}
         .col-md-6.pull-right
           .audio
             - if false
@@ -70,7 +70,7 @@
       .row
         .col-md-12.pull-right
           .title
-            ספר #{display_book_name(@chapter.book, 'he')} - פרק #{@chapter.order}
+            ספר #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
         .col-md-6.pull-right
           .audio
             - if false
@@ -97,7 +97,7 @@
           / Aramic Starts
           #tab-aramic.tab-pane.active
             .title
-              ספר #{display_book_name(@chapter.book, 'he')} - פרק #{@chapter.order}
+              ספר #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
             - @chapter.ordered_sentences.each do |sentence|
               .sentence{:class => calculate_sentence_height(sentence)}
                 #{sentence.order.to_s}. #{sentence.aramic}          
@@ -105,7 +105,7 @@
           / English Starts
           #tab-english.tab-pane
             .title.english
-              Book of #{display_book_name(@chapter.book, 'en')} - Chapter #{@chapter.order}            
+              Book of #{display_book_name(@chapter.book, 'english')} - Chapter #{@chapter.order}            
             .english.small-font
               - @chapter.ordered_sentences.each do |sentence|
                 .sentence{:class => calculate_sentence_height(sentence)}
@@ -120,5 +120,5 @@
       / Tabs Ends           
 .pull-left
   .btn-group
-    .btn
-      גרסה להדפסה
+    = link_to  set_download_variables_chapter_path(@chapter), remote: true, class: 'btn' do
+      = t :download_vertion

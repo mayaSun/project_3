@@ -46,4 +46,5 @@
     Chapter.where(book: book).where(order: order - 1).first || Chapter.last
   end
 
+
 end

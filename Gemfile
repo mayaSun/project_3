@@ -34,6 +34,8 @@ gem 'pg'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
 
 group :development, :test do
   gem 'sqlite3'

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login', to: 'pages#create_admin_session'
   get '/set_language', to: 'pages#set_language'
 
-  resources :chapters 
-
+  resources :chapters do
+    member {get "set_download_variables"}
+    member {get "download"}
+  end
 end
