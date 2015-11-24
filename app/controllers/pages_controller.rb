@@ -16,10 +16,11 @@ class PagesController <ApplicationController
   end
 
   def set_language
-    I18n.locale = params[:locale]
-    respond_to do |format|
-      format.js {render inline: "location.reload();" }
-    end
+    I18n.locale = params[:locale].to_sym 
+    #respond_to do |format|
+      #format.js {render inline: "location.reload();" }
+    #end
+    redirect_to root_path
   end
 
 end
