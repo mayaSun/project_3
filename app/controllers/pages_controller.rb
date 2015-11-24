@@ -16,7 +16,6 @@ class PagesController <ApplicationController
   end
 
   def set_language
-    Chapter.create(book: I18n.locale)
     I18n.locale = params[:locale].to_sym 
     respond_to do |format|
       format.js {render inline: "location.reload();" }
