@@ -63,9 +63,10 @@ module ApplicationHelper
           when 'english'
             return 'Genesis'          
         end
-      when 'Exodus'
+      when 'exodus'
         case language
           when 'hebrow'
+            return 'שמות'
           when 'aramic'  
             return 'שמות'
           when 'arabic'
