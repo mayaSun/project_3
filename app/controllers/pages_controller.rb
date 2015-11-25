@@ -16,6 +16,7 @@ class PagesController <ApplicationController
   end
 
   def set_language
+    session[:locale] = params[:locale].to_sym 
     I18n.locale = params[:locale].to_sym 
     respond_to do |format|
       format.js {render inline: "location.reload();" }

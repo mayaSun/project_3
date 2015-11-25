@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
 
  # ensure locale persists
   def default_url_options(options={})
+    I18n.locale = session[:locale]
     {:locale => I18n.locale}
   end
 
