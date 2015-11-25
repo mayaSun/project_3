@@ -6,7 +6,7 @@
     = bootstrap_form_for @chapter, layout: :horizontal do |f|
       .row
         .col-md-4.pull-right
-          = f.select 'book', options_for_select([ "genesis", "exudos" ], @chapter.book), label: 'ספר:',label_col: "col-sm-5.col-sm-push-7", control_col: "col-sm-7"    
+          = f.select 'book', options_for_select([ "genesis", "exodus" ], @chapter.book), label: 'ספר:',label_col: "col-sm-5.col-sm-push-7", control_col: "col-sm-7"    
           = f.text_field :order, label: 'מספר פרק:',label_col: "col-sm-5.col-sm-push-7", control_col: "col-sm-7"  
       .row
         .col-md-5.pull-right

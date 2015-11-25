@@ -44,7 +44,8 @@
   end
 
   def prev
-    Chapter.where(book: book).where(order: order - 1).first || Chapter.last
+    Chapter.where(book: book).where(order: order - 1).first || 
+    ((book == 'genesis') ? Chapter.where(book: 'exudos').where(order: 40).first : Chapter.where(book: 'genesis').where(order: 50).first) 
   end
 
 
