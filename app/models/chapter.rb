@@ -31,7 +31,7 @@
   end
 
   def self.all_ordered
-    Chapter.where(book: 'genesis').order(:order) + Chapter.where(book: 'exudos').order(:order)
+    Chapter.where(book: 'genesis').order(:order) + Chapter.where(book: 'exodus').order(:order)
   end
 
   def ordered_sentences
@@ -40,12 +40,12 @@
 
   def next
     Chapter.where(book: book).where(order: order + 1).first || 
-      ((book == 'genesis') ? Chapter.where(book: 'exudos').where(order: 1).first : Chapter.where(book: 'genesis').where(order: 1).first) 
+      ((book == 'genesis') ? Chapter.where(book: 'exodus').where(order: 1).first : Chapter.where(book: 'genesis').where(order: 1).first) 
   end
 
   def prev
     Chapter.where(book: book).where(order: order - 1).first || 
-    ((book == 'genesis') ? Chapter.where(book: 'exudos').where(order: 40).first : Chapter.where(book: 'genesis').where(order: 50).first) 
+    ((book == 'genesis') ? Chapter.where(book: 'exodus').where(order: 40).first : Chapter.where(book: 'genesis').where(order: 50).first) 
   end
 
 
