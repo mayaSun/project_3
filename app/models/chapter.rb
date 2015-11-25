@@ -39,7 +39,8 @@
   end
 
   def next
-    Chapter.where(book: book).where(order: order + 1).first || Chapter.first
+    Chapter.where(book: book).where(order: order + 1).first || 
+      ((book == 'genesis') ? Chapter.where(book: 'exudos').where(order: 1).first : Chapter.where(book: 'genesis').where(order: 1).first) 
   end
 
   def prev
