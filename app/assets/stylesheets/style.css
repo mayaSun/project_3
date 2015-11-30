@@ -293,7 +293,7 @@ p{
 .next-prev-btn-group .chapter-title{
   margin: 1px 1px 1px 1px;
   padding: 1px 1px 1px 1px;
-  font-size: 26px;
+  font-size: 20px;
 }
 
 .next-prev-btn-group  a{
@@ -330,8 +330,8 @@ p{
 @media (min-width: 900px) and (max-width: 1049px) {
 
   .next-prev-btn-group{
-    width: 80%;
-    margin-left: 15%;    
+    width: 84%;
+    margin-left: 16%;    
   }
 
 }
