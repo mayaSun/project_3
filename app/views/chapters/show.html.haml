@@ -98,11 +98,12 @@
 .content-box
   .row
     .col-sm-4.pull-right
-      %br
-      %br
-      %br
-      .visible-sm
+      .hidden-xs
         %br
+        %br
+        %br
+        .visible-sm
+          %br
       .row
         .col-md-6.pull-right
           .title
@@ -117,11 +118,12 @@
         .sentence{:class => calculate_sentence_height(sentence)}
           #{sentence.order.to_s}. #{sentence.arabic}
     .col-sm-4.pull-right
-      %br
-      %br
-      %br
-      .visible-sm
-        .text-paddind-sm      
+      .hidden-xs
+        %br
+        %br
+        %br
+        .visible-sm
+          .text-paddind-sm      
       .row
         .col-md-8.pull-right
           .title
