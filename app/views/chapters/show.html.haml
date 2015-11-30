@@ -47,7 +47,7 @@
                 .col-md-6.col-ms-6.hidden-sm{:class => pull_left_or_right()}
                   = t :choose_chapter
                 .col-md-6.col-sm-12{:class => pull_left_or_right()}
-                  = render partial: 'chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
+                  = render partial: '/chapters/chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
   .header-top.navbar-fixed-top.visible-xs
     .row
       .col-xs-12
@@ -80,7 +80,7 @@
               .col-xs-8{:class => pull_left_or_right()}
                 = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter.book)
               .col-xs-4
-                = render partial: 'chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
+                = render partial: '/chapters/chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
       .col-xs-4.pull-right
         .btn-group
           %button.btn.btn-link.dropdown-toggle{"data-toggle" => "dropdown"}
