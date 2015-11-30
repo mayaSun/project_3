@@ -1,0 +1,37 @@
+.panel.panel-smart
+  .panel-heading
+    %h3.panel-title 
+      = @chapter.new_record? ? 'הוסף  פרק' : 'עדכן פרק' 
+  .panel-body  
+    = bootstrap_form_for @chapter, layout: :horizontal do |f|
+      .row
+        .col-md-4.pull-right
+          = f.select 'book', options_for_select([ "genesis", "exodus" ], @chapter.book), label: 'ספר:',label_col: "col-sm-5.col-sm-push-7", control_col: "col-sm-7"    
+          = f.text_field :order, label: 'מספר פרק:',label_col: "col-sm-5.col-sm-push-7", control_col: "col-sm-7"  
+      .row
+        .col-md-5.pull-right
+          = f.text_field :audio_hebrow, label: 'שמע בעברית:',label_col: "col-sm-5.col-sm-push-7", control_col: "col-sm-7" 
+          = f.text_field :audio_arabic, label: 'שמע ערבית:',label_col: "col-sm-5.col-sm-push-7", control_col: "col-sm-7"    
+      .form-group
+        %label.control-label.col-md-2.pull-right
+          טקסט בעברית:
+        .col-md-10.pull-right
+          = text_area_tag :hebrow, nil, class: 'form-control', rows: "10"
+      .form-group
+        %label.control-label.col-md-2.pull-right
+          טקסט בארמית:
+        .col-md-10.pull-right
+          = text_area_tag :aramic, nil, class: 'form-control', rows: "10"
+      .form-group
+        %label.control-label.col-md-2.pull-right
+          טקסט בערבית:
+        .col-md-10.pull-right
+          = text_area_tag :arabic, nil, class: 'form-control', rows: "10"
+      .form-group
+        %label.control-label.col-md-2.pull-right
+          טקסט באנגלית:
+        .col-md-10.pull-right
+          = text_area_tag :english, nil, class: 'english form-control', rows: "10"          
+      = f.text_area :meaning, label: 'פירוש:',label_col: "col-sm-2.col-sm-push-10", control_col: "col-sm-10", rows: 10
+      = f.button class: 'btn btn-add', id: 'chapter-form-submit' do
+        = @chapter.new_record? ? 'הוסף פרק' : 'עדכן פרק'
