@@ -1,8 +1,0 @@
-%br
-%br
-.row
-  .col-md-4.pull-right
-    = bootstrap_form_tag url:'/login', layout: :horizontal do |f|
-      = f.text_field :user_name, label: "שם משתמש:" ,label_col: "col-sm-4.col-sm-push-8", control_col: "col-sm-8"
-      = f.password_field :password, label:'סיסמה:', label_col: "col-sm-4.col-sm-push-8", control_col: "col-sm-8"
-      = f.submit 'התחבר', class: 'btn' 

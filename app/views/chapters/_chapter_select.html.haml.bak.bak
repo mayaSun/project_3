@@ -1,6 +1,0 @@
-#books_chapters_wrapper
-  - book ||= params[:book]
-  - if  book == 'Genesis' || book == 'genesis'
-    = select_tag 'choosen_chapter', options_for_select(Chapter.book_chapters('genesis').map(&:order), chapter ||= 1) ,onchange: 'this.form.submit()'
-  - else
-    = select_tag 'choosen_chapter', options_for_select(Chapter.book_chapters('exodus').map(&:order), chapter ||= 1) ,onchange: 'this.form.submit()'
