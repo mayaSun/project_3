@@ -1,6 +1,7 @@
 he:
   language: "שפה"
-  choose_chapter: "בחר פרק"
+  choose_chapter: ":פרק"
+  choose_book: ":ספר"
   genesis: 'בראשית'
   exodus: 'שמות' 
   next_chapter: 'לפרק הבא'

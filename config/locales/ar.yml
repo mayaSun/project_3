@@ -1,6 +1,7 @@
 ar:
   language: "السموات"
-  choose_chapter: "وجه"
+  choose_chapter: 'السموات'
+  choose_book: 'وعلى'
   genesis: 'وخالية'
   exodus: 'المياه.'
   next_chapter: 'وخالية وعلى'

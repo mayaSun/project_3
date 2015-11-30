@@ -71,6 +71,15 @@ class ChaptersController <ApplicationController
     end
   end
 
+  def chapter_select
+    render partial: 'chapter_select'
+  end
+
+  def select_chapter
+    @chapter = Chapter.where(book: params[:choosen_book]).where(order: params[:choosen_chapter]).first
+    render :show
+  end
+
   private
 
   def chapter_params

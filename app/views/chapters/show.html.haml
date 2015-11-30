@@ -1,8 +1,8 @@
 %header#header-area
   / Header Top Starts
-  .header-top.navbar-fixed-top
+  .header-top.navbar-fixed-top.hidden-xs
     .row
-      .col-md-3
+      .col-md-2.col-sm-1
         %ul.nav.navbar-nav.pull-left
           .btn-group
             %button.btn.btn-link.dropdown-toggle{"data-toggle" => "dropdown"}
@@ -15,7 +15,7 @@
                 = link_to 'עברית', set_language_path(locale: 'he'), remote: true
               %li
                 = link_to 'English', set_language_path(locale: 'en'), remote: true       
-      .col-md-5.jcol-md-offset-1
+      .col-md-7.col-sm-8
         .next-prev-btn-group 
           .row
             .col-md-4.pull-right
@@ -32,17 +32,68 @@
                 = link_to chapter_path(@chapter.next) do
                   %i.fa.fa-arrow-left  
                   = t :next_chapter             
-      .col-md-3.col-md-offset-1
+      .col-md-3.col-sm-3
+        = form_tag select_chapter_path, method: :get, class: "form-horizontal" do
+          .row
+            .col-md-1.col-sm-2{:class => pull_left_or_right()}
+            .col-md-5.col-sm-5{:class => pull_left_or_right()}
+              .row
+                .col-md-4.col-ms-5.hidden-sm{:class => pull_left_or_right()}
+                  = t :choose_book
+                .col-md-8.col-sm-12{:class => pull_left_or_right()}
+                  = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter.book)
+            .col-md-4.col-sm-4{:class => pull_left_or_right()}
+              .row           
+                .col-md-6.col-ms-6.hidden-sm{:class => pull_left_or_right()}
+                  = t :choose_chapter
+                .col-md-6.col-sm-12{:class => pull_left_or_right()}
+                  = render partial: 'chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
+  .header-top.navbar-fixed-top.visible-xs
+    .row
+      .col-xs-12
+        .next-prev-btn-group 
+          .row
+            .col-xs-12.pull-right      
+              .chapter-title
+                = t @chapter.book.to_sym 
+                %span - #{@chapter.order.to_s}  
+            .col-xs-6.pull-right
+              .pull-right        
+                = link_to chapter_path(@chapter.prev) do
+                  = t :prev_chapter
+                  %i.fa.fa-arrow-right          
+            .col-xs-6.pull-right 
+              .pull-left    
+                = link_to chapter_path(@chapter.next) do
+                  %i.fa.fa-arrow-left  
+                  = t :next_chapter  
+  .visible-xs
+    %br
+    %br
+    %br
+    %br
+    .row
+      .col-xs-8.pull-right
         .btn-group
-          %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            = t :choose_chapter
-            %span.caret
+          = form_tag select_chapter_path, method: :get, class: "form-horizontal" do
+            .row
+              .col-xs-8{:class => pull_left_or_right()}
+                = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter.book)
+              .col-xs-4
+                = render partial: 'chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
+      .col-xs-4.pull-right
+        .btn-group
+          %button.btn.btn-link.dropdown-toggle{"data-toggle" => "dropdown"}
+            = t :language
+            %i.fa.fa-caret-down
           %ul.dropdown-menu
-            - Chapter.all_ordered.each do |chapter|
-              %li
-                = link_to chapter_path(chapter) do
-                  = t @chapter.book.to_sym
-                  %span - #{chapter.order.to_s}      
+            %li
+              = link_to 'السموات', set_language_path(locale: 'ar'), remote: true
+            %li
+              = link_to 'עברית', set_language_path(locale: 'he'), remote: true
+            %li
+              = link_to 'English', set_language_path(locale: 'en'), remote: true         
+  %br
   %br
 .content-box
   .row
@@ -50,6 +101,8 @@
       %br
       %br
       %br
+      .visible-sm
+        %br
       .row
         .col-md-6.pull-right
           .title
@@ -67,6 +120,8 @@
       %br
       %br
       %br
+      .visible-sm
+        .text-paddind-sm      
       .row
         .col-md-8.pull-right
           .title
@@ -90,7 +145,7 @@
           %li.active
             %a{:href => "#tab-aramic", "data-toggle" => "tab"} ארמית          
           %li
-            %a{:href => "#tab-english", "data-toggle" => "tab"} English
+            %a{:href => "#tab-english", "data-toggle" => "tab"} English  
           %li
             %a{:href => "#tab-interpretation", "data-toggle" => "tab"} פירוש           
         / Nav Tabs Ends
@@ -124,3 +179,4 @@
   .btn-group
     = link_to  set_download_variables_chapter_path(@chapter), remote: true, class: 'btn' do
       = t :download_vertion
+%br      

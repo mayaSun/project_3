@@ -90,4 +90,12 @@ module ApplicationHelper
     end  
   end
 
+  def pull_left_or_right
+    if session[:locale] == 'en'
+      'pull-left english small-letter'
+    else
+      'pull-right'
+    end
+  end
+
 end

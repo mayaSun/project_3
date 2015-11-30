@@ -21,7 +21,8 @@
 
 en:
   language: "Language"
-  choose_chapter: "Choose Chapter"
+  choose_book: "Book:"
+  choose_chapter: "chapter"
   genesis: 'Genesis'
   exodus: 'Exodus'
   next_chapter: 'Next Chapter'

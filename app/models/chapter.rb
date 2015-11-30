@@ -48,5 +48,8 @@
     ((book == 'genesis') ? Chapter.where(book: 'exodus').where(order: 40).first : Chapter.where(book: 'genesis').where(order: 50).first) 
   end
 
+  def self.book_chapters(book)
+    Chapter.where(book: book).order(:order)
+  end
 
 end
