@@ -1,8 +1,7 @@
 ar:
-  language: 'لغة'
+  language: 'language | שפה'
   choose_chapter: 'باب'
   choose_book: 'كتاب'
-
   genesis: 'سفر التكوين'
   exodus: 'هجرة جماعية'
   next_chapter: 'التالى باب'

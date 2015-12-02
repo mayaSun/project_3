@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  language: "Language"
+  language: "لسم | שפה"
   choose_book: "Book:"
   choose_chapter: "chapter"
   genesis: 'Genesis'
