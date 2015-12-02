@@ -19,6 +19,9 @@
     order = 1
     text.split(%r{[1-9]{1}.}).each do |sentence|
       if sentence.length > 5
+        if sentence[0] == '.'
+          sentence.slice!(0)
+        end
         db_sentence = Sentence.where(chapter_id: id).where(order: order).first
         if !db_sentence
           Sentence.create(chapter_id: id, order: order , language.to_sym => sentence)

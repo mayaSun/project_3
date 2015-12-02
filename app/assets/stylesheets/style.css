@@ -22,6 +22,14 @@ body{
       height: 90px;
     } 
 
+    .four-lines {
+      height: 120px;
+    } 
+
+    .five-lines {
+      height: 150px;
+    } 
+
   }
   @media (min-width: 600px) and (max-width: 999px) {
 
@@ -45,6 +53,15 @@ body{
     .three-lines {
       height: 94px;
     } 
+
+    .four-lines {
+      height: 124px;
+    } 
+
+    .five-lines {
+      height: 154px;
+    }
+
   }
   @media (min-width: 250px) and (max-width: 599px) {
 
@@ -59,6 +76,12 @@ body{
     } 
 
     .three-lines {
+    } 
+
+    .four-lines {
+    } 
+
+    .five-lines {
     } 
 
   }
@@ -116,6 +139,7 @@ p{
  .content-box .title {
   font-size: 21px;
   color: #2F542F; /* Green */
+  height: 30px;
  }
 
 .english {

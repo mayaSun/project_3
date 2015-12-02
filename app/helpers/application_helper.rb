@@ -5,8 +5,12 @@ module ApplicationHelper
       'one-line'
     elsif sentence.max_length < 80
       'two-lines'
-    else
+    elsif sentence.max_length < 120
       'three-lines'
+    elsif sentence.max_length < 160
+      'four-lines'
+    else
+      'five-lines'
     end
   end
 
@@ -15,8 +19,12 @@ module ApplicationHelper
       'one-line'
     elsif sentence.max_length < 120
       'two-lines'
-    else
+    elsif sentence.max_length < 180
       'three-lines'
+    elsif sentence.max_length < 240
+      'four-lines'
+    else
+      'five-lines'
     end
   end
 
@@ -25,8 +33,12 @@ module ApplicationHelper
       'one-line'
     elsif sentence.max_length < 80
       'two-lines'
-    else
+    elsif sentence.max_length < 120
       'three-lines'
+    elsif sentence.max_length < 160
+      'four-lines'
+    else
+      'five-lines'
     end
   end
 
@@ -37,8 +49,12 @@ module ApplicationHelper
       'two-lines'
     elsif sentence.max_length < 90
       'three-lines'
-    else
+    elsif sentence.max_length < 120
+      'three-lines'
+    elsif sentence.max_length < 150
       'four-lines'
+    else
+      'five-lines'
     end
   end
 
