@@ -428,7 +428,7 @@ audio {
 
  @media (min-width: 1000px) {
   .text-paddind {
-    height: 14px;
+    height: 12px;
   }
 }
  @media (min-width: 770px) and (max-width: 990px) {
