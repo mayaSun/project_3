@@ -137,6 +137,36 @@ p{
     background: linear-gradient(#40E0D0, #E9E2B4); /* Standard syntax */
     color: #1E5828; /* Green */
   }
+
+  .header-content-div-header {
+    top: 10%;
+    right: 5%;
+    width: 90%;
+    line-height: 1.3;
+    font-size: 50px;
+    position: absolute;
+    color:  #1E5828; /*Green*/ 
+    text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }
+
+  .header-content-div-text {
+    top: 55%;
+    right: 5%;
+    width: 50%;
+    line-height: 1.3;
+    font-size: 20px;
+    position: absolute;
+    color:  #3e2e08; /*Dark brown*/
+    text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }
+
+  .header-content-div-facefook {
+    top: 18%;
+    left: 5%;
+    position: absolute; 
+    z-index:10;    
+  }
+
   .content-box{
     float: center;
     background: white; 

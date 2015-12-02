@@ -94,7 +94,15 @@
             %li
               = link_to 'English', set_language_path(locale: 'en'), remote: true         
   %br
-  %img.img-responsive{:alt => "", :src => "/images/header.png", :title => "צמחי מרפא"}/
+  .row
+    .col-sm-12
+      %img.img-responsive{:alt => "", :src => "/images/header.png", :title => "מורשת שמית"}/
+      = link_to 'https://www.facebook.com/semiticheritage', target: :_blank , class: 'header-content-div-facefook' do
+        %img.img-responsive{:alt => "", :src => "/facebook-icon.png", :title => "facebook"}/
+      .header-content-div-header.hidden-xs
+        תרגום התורה לערבית
+      .header-content-div-text.hidden-xs
+        לרווחת הציבור הרחב תרגום התורה לערבית בת זמננו ע"פ המסורת היהודית
 .content-box
   .row
     .col-sm-4.pull-right
