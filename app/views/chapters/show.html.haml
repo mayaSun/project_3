@@ -104,16 +104,16 @@
         %br
         .visible-sm
           %br
-      .row
-        .col-md-6.pull-right
-          .title
-            نور #{display_book_name(@chapter.book, 'arabic')} - نور #{@chapter.order}
-        .col-md-6.pull-right
-          .audio
-            - if false
-              //%audio{:controls => "", :src => @chapter.audio_arabic, :type => "audio/mpeg"}
-              %audio{:controls => "", :src => "/assets/audio/Maya - Are U with me.mp3", :type => "audio/mpeg"}
-                Your browser does not support the audio element.
+      .title
+        .row
+          .col-md-6.pull-right
+            #{display_book_name(@chapter.book, 'arabic')} - نور #{@chapter.order}
+          .col-md-6.pull-right
+            .audio
+              - if false
+                //%audio{:controls => "", :src => @chapter.audio_arabic, :type => "audio/mpeg"}
+                %audio{:controls => "", :src => "/assets/audio/Maya - Are U with me.mp3", :type => "audio/mpeg"}
+                  Your browser does not support the audio element.
       - @chapter.ordered_sentences.each do |sentence|
         .sentence{:class => calculate_sentence_height(sentence)}
           #{sentence.order.to_s}. #{sentence.arabic}
@@ -123,19 +123,19 @@
         %br
         %br
         .visible-sm
-          .text-paddind-sm      
-      .row
-        .col-md-8.pull-right
-          .title
-            ספר #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
-        .col-md-4.pull-right
-          .audio
-            = link_to @chapter.audio_hebrow, target: '_blank' do
-              %i.fa.fa-volume-up          
-            - if false
-              //%audio{:controls => "", :src => @chapter.audio_arabic, :type => "audio/mpeg"}
-              %audio{:controls => "", :src => "/assets/audio/Maya - Are U with me.mp3", :type => "audio/mpeg"}
-                Your browser does not support the audio element.
+          %br      
+      .title
+        .row
+          .col-md-8.pull-right
+            #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
+          .col-md-4.pull-right
+            .audio
+              = link_to @chapter.audio_hebrow, target: '_blank' do
+                %i.fa.fa-volume-up          
+              - if false
+                //%audio{:controls => "", :src => @chapter.audio_arabic, :type => "audio/mpeg"}
+                %audio{:controls => "", :src => "/assets/audio/Maya - Are U with me.mp3", :type => "audio/mpeg"}
+                  Your browser does not support the audio element.
       - @chapter.ordered_sentences.each do |sentence|
         .sentence{:class => calculate_sentence_height(sentence)}
           #{sentence.order.to_s}. #{sentence.hebrow}    
@@ -155,8 +155,9 @@
         .tab-content.clearfix
           / Aramic Starts
           #tab-aramic.tab-pane.active
+            .text-paddind-sm
             .title
-              ספר #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
+              #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
             - @chapter.ordered_sentences.each do |sentence|
               .sentence{:class => calculate_sentence_height(sentence)}
                 #{sentence.order.to_s}. #{sentence.aramic}          
@@ -164,7 +165,7 @@
           / English Starts
           #tab-english.tab-pane
             .title.english
-              Book of #{display_book_name(@chapter.book, 'english')} - Chapter #{@chapter.order}            
+              #{display_book_name(@chapter.book, 'english')} - Chapter #{@chapter.order}            
             .english.small-font
               - @chapter.ordered_sentences.each do |sentence|
                 .sentence{:class => calculate_sentence_height(sentence)}

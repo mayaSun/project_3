@@ -139,7 +139,7 @@ p{
  .content-box .title {
   font-size: 21px;
   color: #2F542F; /* Green */
-  height: 30px;
+  height: 40px;
  }
 
 .english {
@@ -405,5 +405,5 @@ audio {
 }
 
 .text-paddind-sm {
-  height: 15px;
+  height: 7px;
 }
