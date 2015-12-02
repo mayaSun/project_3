@@ -41,7 +41,7 @@
                 .col-md-4.col-ms-5.hidden-sm{:class => pull_left_or_right()}
                   = t :choose_book
                 .col-md-8.col-sm-12{:class => pull_left_or_right()}
-                  = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter.book)
+                  = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter.book), class: 'select-btn'
             .col-md-4.col-sm-4{:class => pull_left_or_right()}
               .row           
                 .col-md-6.col-ms-6.hidden-sm{:class => pull_left_or_right()}
@@ -94,7 +94,7 @@
             %li
               = link_to 'English', set_language_path(locale: 'en'), remote: true         
   %br
-  %br
+  %img.img-responsive{:alt => "", :src => "/images/header.png", :title => "צמחי מרפא"}/
 .content-box
   .row
     .col-sm-4.pull-right
@@ -155,7 +155,7 @@
         .tab-content.clearfix
           / Aramic Starts
           #tab-aramic.tab-pane.active
-            .text-paddind-sm
+            .text-paddind
             .title
               #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
             - @chapter.ordered_sentences.each do |sentence|
@@ -164,7 +164,7 @@
           / Aramic End           
           / English Starts
           #tab-english.tab-pane
-            .text-paddind-sm
+            .text-paddind-english
             .title.english
               #{display_book_name(@chapter.book, 'english')} - Chapter #{@chapter.order}            
             .english.small-font
@@ -179,8 +179,9 @@
           / Interpretation End
         / Tab Content Ends
       / Tabs Ends           
-.pull-left
-  .btn-group
-    = link_to  set_download_variables_chapter_path(@chapter), remote: true, class: 'btn' do
-      = t :download_version
-%br      
+  .pull-left
+    .btn-group
+      = link_to  set_download_variables_chapter_path(@chapter), remote: true, class: 'download-btn' do
+        = t :download_version
+  %br
+  %br      
