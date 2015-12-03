@@ -8,6 +8,10 @@
     = javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"
   %body{:onload => "number_pages"}
     #header
-      //= wicked_pdf_image_tag 'mysite.jpg'
+      = wicked_pdf_image_tag '/images/file-header.png', class: 'image'
+      .header-content-div-header
+        מורשת שמית | التراث سامية | Semitic Heritage
+      .header-content-div-text 
+        https://semitic-heritage.herokuapp.com/
     #content
       = yield

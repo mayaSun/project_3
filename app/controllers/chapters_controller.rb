@@ -63,12 +63,22 @@ class ChaptersController <ApplicationController
   def download
     @chapter = Chapter.find_by(slug: params[:id]) 
     @versions = params[:versions]
-    if !@versions
-      flash[:error] = "you must select languages"
-    else
-      template = '/chapters/download_' + params[:versions].count.to_s + '_version'
-      render pdf: "file_name", template: template,layout: '/layouts/pdf-layout.html.haml', orientation: 'Landscape'
+    if params[:sentences] == 'all'
+      @sentences = @chapter.ordered_sentences
+    else 
+      from = params[:from_sentence].to_i - 1
+      to = params[:to_sentence].to_i - 1
+      if from >= to
+        to = @chapter.sentences.count - 1
+      end
+      @sentences = @chapter.ordered_sentences[from..to]     
     end
+    if !@versions
+      @versions = ['arabic']
+    end
+    @orientation = params[:orientation]
+    template = '/chapters/download_' + @versions.count.to_s + '_version'
+    render pdf: "file_name", template: template, layout: '/layouts/pdf-layout.html.haml', orientation: @orientation
   end
 
   def chapter_select

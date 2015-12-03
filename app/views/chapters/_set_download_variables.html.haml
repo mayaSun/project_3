@@ -4,7 +4,7 @@
       .panel.panel-smart
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"} ×
-        .panel-title
+        .panel-title{:class => pull_left_or_right()}
           %span
             = t :download_version_title_part_1
           %span
@@ -18,7 +18,7 @@
         .panel-body
           = render 'shared/messages' 
           = bootstrap_form_tag url: download_chapter_url, method: :get, layout: :horizontal, :html => {target: '_blank'},id: 'modal_form' do |f|
-            .sub-title
+            .sub-title{:class => pull_left_or_right()}
               = t :choose_download_versions            
             .row
               - [[(t :arabic), 'arabic'],[(t :hebrow),'hebrow'],[(t :aramic),'aramic'],[(t :english),'english']].each do |version|
@@ -29,7 +29,36 @@
                         = check_box_tag "versions[]", version[1], true, class: 'checkbox' 
                     .col-md-9.col-sx-8.pull-right
                       %span              
-                        = version[0] 
+                        = version[0]            
+            .choose-sentences{:class => pull_left_or_right()}
+              .sub-title{:class => pull_left_or_right()}
+                = t :choose_the_download_sentences              
               = hidden_field_tag :id, @chapter.slug                      
+              %br  
+              = radio_button_tag "sentences", 'all', true
+              = t :download_all_chapter
+              %br
+              = radio_button_tag "sentences", 'part', false
+              = t :download_part_of_chapter
+              %br
+              .row
+                .col-md-11.col-md-offset-1
+                  %spen
+                    = t :from_sentence
+                  %span
+                    = select_tag 'from_sentence', options_for_select(@chapter.sentences.map{ |s| [s.order]}, @chapter.sentences.first.order), class: 'select-btn'
+                  %span
+                    = t :to_sentence
+                  %span
+                    = select_tag 'to_sentence', options_for_select(@chapter.sentences.map{ |s| [s.order]}, @chapter.sentences.last.order), class: 'select-btn'     
+              .sub-title{:class => pull_left_or_right()}
+                = t :choose_the_download_page_orientation
+              %br  
+              = radio_button_tag "orientation", 'Landscape', true
+              = t :landscap
+              = radio_button_tag "orientation", 'Portrait', false
+              = t :portrait               
+            %br
+            %br
             = f.submit t :download_version ,class: 'btn btn-update', target: '_blank'
               

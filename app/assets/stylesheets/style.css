@@ -212,6 +212,10 @@ p{
   padding: 2px 4px 3px 4px;
 }
 
+.choose-sentences {
+  width: 100%;
+}
+
 .select-btn {
   background: white;
   color: #3e2e08; /*Dark brown*/ 
@@ -354,9 +358,10 @@ p{
     }
 
     .panel-smart .panel-body .sub-title{ 
+      width: 100%;
       font-size:22px;
       margin-top: 15px;
-      margin-bottom: 25px;
+      margin-bottom: 7px;
     } 
 
 .small-font {

@@ -1,7 +1,7 @@
 .col-wrapper{:class => is_english(@versions[0])}
   .title
     = display_book_chapter(@chapter.book, @chapter.order, @versions[0]) 
-  - @chapter.sentences.each do |sentence|
+  - @sentences.each do |sentence|
     #{sentence.order.to_s}. #{sentence[@versions[0].to_sym]}
     %br
 

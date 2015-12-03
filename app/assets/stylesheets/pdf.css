@@ -1,9 +1,23 @@
+body {
+  font-size: 12px;
+}
+
+#header {
+  position: relative;
+}
+
 .col-wrapper {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: none;
     margin-bottom: none;
+}
+
+.image {
+  max-width: 100%;
+  height: auto; 
+  display: block;
 }
 
 .col-2 {
@@ -26,24 +40,49 @@
 
 /* line hight*/
 .one-line {
-  height: 25px;
+  height: 23px;
 }   
 
 .two-lines {
-  height: 50px;
+  height: 38px;
 } 
 
 .three-lines {
-  height: 75px;
+  height: 53px;
 }
 
 .four-lines {
-  height: 100px;
+  height: 68px;
+}
+.five-lines {
+  height: 83px;
 }
 
 /* english */
 .english {
   direction:LTR !important;
   text-align: left !important;
-  font-size: 12px;
+  font-size: 10px;
 }
+
+  .header-content-div-header {
+    top: 10%;
+    right: 5%;
+    width: 90%;
+    line-height: 1.3;
+    font-size: 35px;
+    position: absolute;
+    color:  black;
+    text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }
+
+  .header-content-div-text {
+    top: 55%;
+    left: 5%;
+    width: 50%;
+    line-height: 1.3;
+    font-size: 18px;
+    position: absolute;
+    color:  black;
+    text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }

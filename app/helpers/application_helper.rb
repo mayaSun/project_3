@@ -14,47 +14,87 @@ module ApplicationHelper
     end
   end
 
-  def calculate_sentence_height_download_2_version(sentence)
-    if sentence.max_length < 60
-      'one-line'
-    elsif sentence.max_length < 120
-      'two-lines'
-    elsif sentence.max_length < 180
-      'three-lines'
-    elsif sentence.max_length < 240
-      'four-lines'
+  def calculate_sentence_height_download_2_version(sentence, orientation)
+    if orientation == 'Landscape'
+      if sentence.max_length < 70
+        'one-line'
+      elsif sentence.max_length < 140
+        'two-lines'
+      elsif sentence.max_length < 280
+        'three-lines'
+      elsif sentence.max_length < 350
+        'four-lines'
+      else
+        'five-lines'
+      end
     else
-      'five-lines'
+      if sentence.max_length < 50
+        'one-line'
+      elsif sentence.max_length < 100
+        'two-lines'
+      elsif sentence.max_length < 150
+        'three-lines'
+      elsif sentence.max_length < 200
+        'four-lines'
+      else
+        'five-lines'
+      end
     end
   end
 
-  def calculate_sentence_height_download_3_version(sentence)
-    if sentence.max_length < 40
-      'one-line'
-    elsif sentence.max_length < 80
-      'two-lines'
-    elsif sentence.max_length < 120
-      'three-lines'
-    elsif sentence.max_length < 160
-      'four-lines'
+  def calculate_sentence_height_download_3_version(sentence, orientation)
+    if orientation == 'Landscape'
+      if sentence.max_length < 40
+        'one-line'
+      elsif sentence.max_length < 80
+        'two-lines'
+      elsif sentence.max_length < 120
+        'three-lines'
+      elsif sentence.max_length < 160
+        'four-lines'
+      else
+        'five-lines'
+      end
     else
-      'five-lines'
+      if sentence.max_length < 35
+        'one-line'
+      elsif sentence.max_length < 70
+        'two-lines'
+      elsif sentence.max_length < 105
+        'three-lines'
+      elsif sentence.max_length < 140
+        'four-lines'
+      else
+        'five-lines'
+      end
     end
   end
 
-  def calculate_sentence_height_download_4_version(sentence)
-    if sentence.max_length < 30
-      'one-line'
-    elsif sentence.max_length < 60
-      'two-lines'
-    elsif sentence.max_length < 90
-      'three-lines'
-    elsif sentence.max_length < 120
-      'three-lines'
-    elsif sentence.max_length < 150
-      'four-lines'
+  def calculate_sentence_height_download_4_version(sentence, orientation)
+    if orientation == 'Landscape'
+      if sentence.max_length < 35
+        'one-line'
+      elsif sentence.max_length < 70
+        'two-lines'
+      elsif sentence.max_length < 105
+        'three-lines'
+      elsif sentence.max_length < 140
+        'four-lines'
+      else
+        'five-lines'
+      end
     else
-      'five-lines'
+      if sentence.max_length < 28
+        'one-line'
+      elsif sentence.max_length < 60
+        'two-lines'
+      elsif sentence.max_length < 56
+        'three-lines'
+      elsif sentence.max_length < 84
+        'four-lines'
+      else
+        'five-lines'
+      end
     end
   end
 
