@@ -41,22 +41,31 @@ body {
 /* line hight*/
 .one-line {
   height: 23px;
+  page-break-inside: avoid !important;
+  display:block;
 }   
 
 .two-lines {
   height: 38px;
+  page-break-inside: avoid !important;
+  display:block;
 } 
 
 .three-lines {
   height: 53px;
+  page-break-inside: avoid !important;
+  display:block
 }
 
 .four-lines {
   height: 68px;
+  page-break-inside: avoid !important;
+  display:block
 }
 
 .five-lines {
   height: 83px;
+  page-break-inside: avoid !important;
 }
 
 /* english */
