@@ -39,28 +39,26 @@ body {
 }
 
 /* line hight*/
-.one-line {
-  height: 23px;
+.sentence {
   page-break-inside: avoid !important;
   display:block;
+}
+
+
+.one-line {
+  height: 23px;
 }   
 
 .two-lines {
   height: 38px;
-  page-break-inside: avoid !important;
-  display:block;
 } 
 
 .three-lines {
   height: 53px;
-  page-break-inside: avoid !important;
-  display:block
 }
 
 .four-lines {
   height: 68px;
-  page-break-inside: avoid !important;
-  display:block
 }
 
 .five-lines {
