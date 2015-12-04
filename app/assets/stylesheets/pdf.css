@@ -39,11 +39,21 @@ body {
 }
 
 /* line hight*/
-.sentence {
-  page-break-inside: avoid !important;
-  display:block;
+.sentence
+{
+    /* page-break-inside: avoid !important; <-- doesn't work*/
+    display:inline-block;
+}
+.sentence:after
+ {
+    display:block;
+    height:0px;
+    visibility: hidden;
 }
 
+.sentence:before { 
+  clear:both; 
+}
 
 .one-line {
   height: 23px;
