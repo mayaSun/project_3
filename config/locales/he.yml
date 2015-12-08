@@ -22,4 +22,7 @@ he:
   to_sentence: 'ועד:'
   choose_the_download_page_orientation: 'בחר את כיוון הדף'
   landscap: 'אופקי'
-  portrait: 'אנכי'  
+  portrait: 'אנכי'
+  header_title: 'التراث سامية | מורשת שם' 
+  header_sub_title: 'הפצת מורשת שם בערבית לבני שם בארצות שם' 
+  commentary: 'פירוש'

@@ -15,6 +15,8 @@
                 = link_to 'עברית', set_language_path(locale: 'he'), remote: true
               %li
                 = link_to 'English', set_language_path(locale: 'en'), remote: true       
+        = link_to 'https://www.facebook.com/semiticheritage', target: :_blank  do
+          %img.img-responsive{:alt => "", :src => "/facebook-icon.png", :title => "facebook"}/
       .col-md-7.col-sm-8
         .next-prev-btn-group 
           .row
@@ -97,12 +99,29 @@
   .row
     .col-sm-12
       %img.img-responsive{:alt => "", :src => "/images/header.png", :title => "מורשת שמית"}/
-      = link_to 'https://www.facebook.com/semiticheritage', target: :_blank , class: 'header-content-div-facefook' do
-        %img.img-responsive{:alt => "", :src => "/facebook-icon.png", :title => "facebook"}/
-      .header-content-div-header.hidden-xs
-        תרגום התורה לערבית
-      .header-content-div-text.hidden-xs
-        לרווחת הציבור הרחב תרגום התורה לערבית בת זמננו ע"פ המסורת היהודית
+      - if false
+        = link_to 'https://www.facebook.com/semiticheritage', target: :_blank , class: 'header-content-div-facefook' do
+          %img.img-responsive{:alt => "", :src => "/facebook-icon.png", :title => "facebook"}/
+      .header-content-div-header-ar.hidden-xs
+        التراث سامية
+      .header-content-div-text-ar.hidden-xs
+        التراث سامية لل سامية بيولبي في اراضي سامية
+      .header-content-div-header-he.hidden-xs
+        מורשת שם
+      .header-content-div-text-he.hidden-xs
+        מורשת שם בערבית
+        %br
+        לבני שם 
+        %br
+        בארצות שם  
+      .header-content-div-header-en.hidden-xs
+        Semitic Heritage
+      .header-content-div-text-en.english.hidden-xs  
+        Semitic Heritage 
+        %br
+        for Semitic Peolpe 
+        %br
+        in Semitic Lands            
 .content-box
   .row
     .col-sm-4.pull-right
@@ -112,6 +131,10 @@
         %br
         .visible-sm
           %br
+      .small-title
+        الترجمة من أسفار موسى الخمسة وفقا ل
+        %spen
+          = link_to 'كمان', 'http://unbound.biola.edu', target: :_blank      
       .title
         .row
           .col-md-6.pull-right
@@ -132,6 +155,8 @@
         %br
         .visible-sm
           %br      
+      .small-title
+        מחמש חומשי תורה אשר מיוחסים למשה - בעברית המקורית 
       .title
         .row
           .col-md-8.pull-right
@@ -153,33 +178,40 @@
         / Nav Tabs Starts
         %ul.nav.nav-tabs
           %li.active
+            %a{:href => "#tab-english", "data-toggle" => "tab"} English          
+          %li
             %a{:href => "#tab-aramic", "data-toggle" => "tab"} ארמית          
           %li
-            %a{:href => "#tab-english", "data-toggle" => "tab"} English  
-          %li
-            %a{:href => "#tab-interpretation", "data-toggle" => "tab"} פירוש           
+            %a{:href => "#tab-interpretation", "data-toggle" => "tab"} 
+              = t :commentary
         / Nav Tabs Ends
         / Tab Content Starts
         .tab-content.clearfix
-          / Aramic Starts
-          #tab-aramic.tab-pane.active
-            .text-paddind
-            .title
-              #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
-            - @chapter.ordered_sentences.each do |sentence|
-              .sentence{:class => calculate_sentence_height(sentence)}
-                #{sentence.order.to_s}. #{sentence.aramic}          
-          / Aramic End           
           / English Starts
-          #tab-english.tab-pane
+          #tab-english.tab-pane.active
             .text-paddind-english
+            .small-title-english.english
+              Translation from the Five books of Moses according to: 
+              %span 
+                = link_to 'Mechon Mamre','http://www.mechon-mamre.org/', target: :_blank 
             .title.english
               #{display_book_name(@chapter.book, 'english')} - Chapter #{@chapter.order}            
             .english.small-font
               - @chapter.ordered_sentences.each do |sentence|
                 .sentence{:class => calculate_sentence_height(sentence)}
                   #{sentence.order.to_s}. #{sentence.english}
-          / English Ends
+          / English Ends        
+          / Aramic Starts
+          #tab-aramic.tab-pane
+            .text-paddind
+            .small-title
+              מחמש חומשי תורה אשר מיוחסים למשה - בעברית המקורית 
+            .title
+              #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
+            - @chapter.ordered_sentences.each do |sentence|
+              .sentence{:class => calculate_sentence_height(sentence)}
+                #{sentence.order.to_s}. #{sentence.aramic}          
+          / Aramic End           
           / Interpretation start
           #tab-interpretation.tab-pane
             .audio
