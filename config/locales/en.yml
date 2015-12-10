@@ -20,9 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  language: "لسم | שפה"
+  language: "language | שפה | لسم"
   choose_book: "Book:"
-  choose_chapter: "chapter"
+  choose_chapter: "Chapter:"
   genesis: 'Genesis'
   exodus: 'Exodus'
   next_chapter: 'Next Chapter'
@@ -47,3 +47,12 @@ en:
   header_title: 'التراث سامية מורשת שמית Semitic Heritage'
   header_sub_title: 'Semitic Heritage for Semitic Peolpe in Semitic Lands'
   commentary: 'Commentary'
+  about_us: 'about us'
+  aramic: 'Aramic'
+  english: 'English'
+  choose_portion: 'Portion:'
+  porsion_1: 'In The Beginning God Created the Man'
+  porsion_2: 'These are the Generations of Man'
+  back_to_bible: 'Back to Tora'
+  semitic_heritage: 'Semitic Heritage'
+  semitic_heritage_text: 'Semitic Heritage for Semitic Peolpe in Semitic Lands'  

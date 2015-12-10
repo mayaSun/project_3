@@ -154,4 +154,10 @@ module ApplicationHelper
     end
   end
 
+  def nav_tabs_english? 
+    if session[:locale] == 'en'  
+      'nav-tabs-english'
+    end
+  end
+
 end

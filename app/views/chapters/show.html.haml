@@ -1,136 +1,54 @@
-%header#header-area
-  / Header Top Starts
-  .header-top.navbar-fixed-top.hidden-xs
+= render 'shared/header', :chapters => true          
+.content-box
+  .chapter-header.pull-right
     .row
-      .col-md-2.col-sm-1
-        %ul.nav.navbar-nav.pull-left
-          .btn-group
-            %button.btn.btn-link.dropdown-toggle{"data-toggle" => "dropdown"}
-              = t :language
-              %i.fa.fa-caret-down
-            %ul.dropdown-menu
-              %li
-                = link_to 'السموات', set_language_path(locale: 'ar'), remote: true
-              %li
-                = link_to 'עברית', set_language_path(locale: 'he'), remote: true
-              %li
-                = link_to 'English', set_language_path(locale: 'en'), remote: true       
-        = link_to 'https://www.facebook.com/semiticheritage', target: :_blank  do
-          %img.img-responsive{:alt => "", :src => "/facebook-icon.png", :title => "facebook"}/
-      .col-md-7.col-sm-8
-        .next-prev-btn-group 
+      .col-md-4.pull-right
+        = form_tag select_chapter_path, method: :get, class: "form-horizontal form-horizontal-chapter" do
           .row
-            .col-md-4.pull-right
-              .pull-right        
-                = link_to chapter_path(@chapter.prev) do
-                  = t :prev_chapter
-                  %i.fa.fa-arrow-right
-            .col-md-4.pull-right      
-              .chapter-title
-                = t @chapter.book.to_sym 
-                %span - #{@chapter.order.to_s}            
-            .col-md-4.pull-right 
-              .pull-left    
-                = link_to chapter_path(@chapter.next) do
-                  %i.fa.fa-arrow-left  
-                  = t :next_chapter             
-      .col-md-3.col-sm-3
-        = form_tag select_chapter_path, method: :get, class: "form-horizontal" do
+            .col-md-7.col-sm-7{:class => pull_left_or_right()}
+              .row
+                .col-md-3.col-sm-3{:class => pull_left_or_right()}
+                  = t :choose_book
+                .col-md-9.col-sm-9{:class => pull_left_or_right()}
+                  = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter.book), class: 'select-btn'
+            .col-md-5.col-sm-4{:class => pull_left_or_right()}
+              .row 
+                - if session[:locale] != 'en'             
+                  .col-md-4.col-sm-6{:class => pull_left_or_right()}
+                    = t :choose_chapter
+                  .col-md-8.col-sm-6{:class => pull_left_or_right()}
+                    = render partial: '/chapters/chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
+                - else
+                  .col-md-6.col-sm-6{:class => pull_left_or_right()}
+                    = t :choose_chapter
+                  .col-md-6.col-sm-6{:class => pull_left_or_right()}
+                    = render partial: '/chapters/chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
+        .visible-xs
+          %br                      
+      .col-md-8.pull-right
+        = form_tag select_chapter_path, method: :get, class: "form-horizontal form-horizontal-chapter" do
           .row
             .col-md-1.col-sm-2{:class => pull_left_or_right()}
-            .col-md-5.col-sm-5{:class => pull_left_or_right()}
-              .row
-                .col-md-4.col-ms-5.hidden-sm{:class => pull_left_or_right()}
-                  = t :choose_book
-                .col-md-8.col-sm-12{:class => pull_left_or_right()}
-                  = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter.book), class: 'select-btn'
-            .col-md-4.col-sm-4{:class => pull_left_or_right()}
-              .row           
-                .col-md-6.col-ms-6.hidden-sm{:class => pull_left_or_right()}
-                  = t :choose_chapter
-                .col-md-6.col-sm-12{:class => pull_left_or_right()}
-                  = render partial: '/chapters/chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
-  .header-top.navbar-fixed-top.visible-xs
-    .row
-      .col-xs-12
-        .next-prev-btn-group 
-          .row
-            .col-xs-12.pull-right      
-              .chapter-title
-                = t @chapter.book.to_sym 
-                %span - #{@chapter.order.to_s}  
-            .col-xs-6.pull-right
-              .pull-right        
-                = link_to chapter_path(@chapter.prev) do
-                  = t :prev_chapter
-                  %i.fa.fa-arrow-right          
-            .col-xs-6.pull-right 
-              .pull-left    
-                = link_to chapter_path(@chapter.next) do
-                  %i.fa.fa-arrow-left  
-                  = t :next_chapter  
-  .visible-xs
-    %br
-    %br
-    %br
-    %br
-    .row
-      .col-xs-8.pull-right
-        .btn-group
-          = form_tag select_chapter_path, method: :get, class: "form-horizontal" do
-            .row
-              .col-xs-8{:class => pull_left_or_right()}
-                = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter.book)
-              .col-xs-4
-                = render partial: '/chapters/chapter_select', locals: {book: @chapter.book, chapter: @chapter.order}
-      .col-xs-4.pull-right
-        .btn-group
-          %button.btn.btn-link.dropdown-toggle{"data-toggle" => "dropdown"}
-            = t :language
-            %i.fa.fa-caret-down
-          %ul.dropdown-menu
-            %li
-              = link_to 'السموات', set_language_path(locale: 'ar'), remote: true
-            %li
-              = link_to 'עברית', set_language_path(locale: 'he'), remote: true
-            %li
-              = link_to 'English', set_language_path(locale: 'en'), remote: true         
+              = t :choose_portion
+            .col-md-11.col-sm-10{:class => pull_left_or_right()}
+              = select_tag 'choosen_portion', options_for_select([["#{t :porsion_1}", 'genesis'], ["#{t :porsion_2}",'exodus'] ], @chapter.book), class: 'select-btn' 
   %br
-  .row
-    .col-sm-12
-      %img.img-responsive{:alt => "", :src => "/images/header.png", :title => "מורשת שמית"}/
-      - if false
-        = link_to 'https://www.facebook.com/semiticheritage', target: :_blank , class: 'header-content-div-facefook' do
-          %img.img-responsive{:alt => "", :src => "/facebook-icon.png", :title => "facebook"}/
-      .header-content-div-header-ar.hidden-xs
-        التراث سامية
-      .header-content-div-text-ar.hidden-xs
-        التراث سامية لل سامية بيولبي في اراضي سامية
-      .header-content-div-header-he.hidden-xs
-        מורשת שם
-      .header-content-div-text-he.hidden-xs
-        מורשת שם בערבית
+  .row.chapters
+    .col-sm-4.col-md-4.pull-right
+      %br
+      %ul.nav.navbar-nav.next-prev-btn-group.hidden-xs
+        %li
+          = link_to chapter_path(@chapter.next) do  
+            = t :next_chapter 
+            %i.fa.fa-arrow-left       
+        %li
+          = link_to chapter_path(@chapter.prev) do
+            %i.fa.fa-arrow-right
+            = t :prev_chapter                         
+      %br
+      %br
+      .visible-sm
         %br
-        לבני שם 
-        %br
-        בארצות שם  
-      .header-content-div-header-en.hidden-xs
-        Semitic Heritage
-      .header-content-div-text-en.english.hidden-xs  
-        Semitic Heritage 
-        %br
-        for Semitic Peolpe 
-        %br
-        in Semitic Lands            
-.content-box
-  .row
-    .col-sm-4.pull-right
-      .hidden-xs
-        %br
-        %br
-        %br
-        .visible-sm
-          %br
       .small-title
         الترجمة من أسفار موسى الخمسة وفقا ل
         %spen
@@ -148,7 +66,16 @@
       - @chapter.ordered_sentences.each do |sentence|
         .sentence{:class => calculate_sentence_height(sentence)}
           #{sentence.order.to_s}. #{sentence.arabic}
-    .col-sm-4.pull-right
+      %ul.nav.navbar-nav.next-prev-btn-group.hidden-xs
+        %li
+          = link_to chapter_path(@chapter.next) do  
+            = t :next_chapter 
+            %i.fa.fa-arrow-left       
+        %li
+          = link_to chapter_path(@chapter.prev) do
+            %i.fa.fa-arrow-right
+            = t :prev_chapter        
+    .col-sm-4.col-md-4.pull-right
       .hidden-xs
         %br
         %br
@@ -172,15 +99,17 @@
       - @chapter.ordered_sentences.each do |sentence|
         .sentence{:class => calculate_sentence_height(sentence)}
           #{sentence.order.to_s}. #{sentence.hebrow}    
-    .col-sm-4.pull-right
+    .col-sm-4.col-md-4.pull-right
       / Tabs Starts
       .tabs-panel
         / Nav Tabs Starts
-        %ul.nav.nav-tabs
+        %ul.nav.nav-tabs{:class => nav_tabs_english?()}
           %li.active
-            %a{:href => "#tab-english", "data-toggle" => "tab"} English          
+            %a{:href => "#tab-english", "data-toggle" => "tab"} 
+              = t :english        
           %li
-            %a{:href => "#tab-aramic", "data-toggle" => "tab"} ארמית          
+            %a{:href => "#tab-aramic", "data-toggle" => "tab"} 
+              = t :aramic         
           %li
             %a{:href => "#tab-interpretation", "data-toggle" => "tab"} 
               = t :commentary
@@ -224,4 +153,5 @@
       = link_to  set_download_variables_chapter_path(@chapter), remote: true, class: 'download-btn' do
         = t :download_version
   %br
-  %br      
+  %br
+%br     

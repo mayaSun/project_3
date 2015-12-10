@@ -1,0 +1,91 @@
+%header#header-area
+  / Header Top Starts
+  .header-top.navbar-fixed-top.hidden-xs
+    .row
+      .col-md-5.col-sm-6
+        %ul.nav.navbar-nav
+          %li
+            %button.btn.btn-link.dropdown-toggle{"data-toggle" => "dropdown"}
+              = t :language
+              %i.fa.fa-caret-down
+            %ul.dropdown-menu
+              %li
+                = link_to 'السموات', set_language_path(locale: 'ar'), remote: true
+              %li
+                = link_to 'עברית', set_language_path(locale: 'he'), remote: true
+              %li
+                = link_to 'English', set_language_path(locale: 'en'), remote: true  
+          %li   
+            = link_to 'https://www.facebook.com/semiticheritage', target: :_blank  do
+              %img.img-responsive{:alt => "", :src => "/facebook-icon.png", :title => "facebook"}/ 
+          %li 
+            - if chapters
+              = link_to about_us_path do
+                = t :about_us
+            - else
+              = link_to chapter_path(Chapter.first) do
+                = t :back_to_bible    
+  .header-top.navbar-fixed-top.visible-xs
+    %ul.nav.navbar-nav
+      .row
+        .col-xs-1.xs-header-btn
+        .col-xs-8.xs-header-btn
+          %li
+            %button.btn.btn-link.dropdown-toggle{"data-toggle" => "dropdown"}
+              = t :language
+              %i.fa.fa-caret-down
+            %ul.dropdown-menu
+              %li
+                = link_to 'السموات', set_language_path(locale: 'ar'), remote: true
+              %li
+                = link_to 'עברית', set_language_path(locale: 'he'), remote: true
+              %li
+                = link_to 'English', set_language_path(locale: 'en'), remote: true   
+        .col-xs-3.xs-header-btn
+          %li   
+            = link_to 'https://www.facebook.com/semiticheritage', target: :_blank  do
+              %img.img-responsive{:alt => "", :src => "/facebook-icon.png", :title => "facebook"}/ 
+        .col-xs-7
+        .col-xs-5
+          %li 
+            - if chapters
+              = link_to about_us_path, class: 'about-us-link' do
+                = t :about_us
+            - else
+              = link_to chapter_path(Chapter.first) do
+                = t :back_to_bible                          
+  %br
+  .row.hidden-xs
+    .col-sm-12
+      %img.img-responsive{:alt => "", :src => "/images/header.png", :title => "מורשת שמית"}/
+      .header-content-div-header-ar
+        التراث سامية
+      .header-content-div-text-ar
+        التراث سامية لل سامية بيولبي في اراضي سامية
+      .header-content-div-header-he
+        מורשת שם
+      .header-content-div-text-he
+        מורשת שם
+        %br
+        לבני שם 
+        %br
+        בארצות שם  
+      .header-content-div-header-en
+        Semitic Heritage
+      .header-content-div-text-en.english 
+        Semitic Heritage 
+        %br
+        for Semitic Peolpe 
+        %br
+        in Semitic Lands
+  .row.visible-xs
+    .col-sm-12   
+      %br
+      %br
+      %br
+      %img.img-responsive{:alt => "", :src => "/images/header.png", :title => "מורשת שמית"}/       
+      .header-content-div-header-xs
+        = t :semitic_heritage
+      .header-content-div-text-xs
+        = t :semitic_heritage_text
+      

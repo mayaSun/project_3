@@ -1,7 +1,7 @@
 he:
-  language: "لسم | language"
-  choose_chapter: ":פרק"
-  choose_book: ":ספר"
+  language: "language | שפה | لسم"
+  choose_chapter: "פרק:"
+  choose_book: "ספר:"
   genesis: 'בראשית'
   exodus: 'שמות' 
   next_chapter: 'לפרק הבא'
@@ -26,3 +26,12 @@ he:
   header_title: 'التراث سامية | מורשת שם' 
   header_sub_title: 'הפצת מורשת שם בערבית לבני שם בארצות שם' 
   commentary: 'פירוש'
+  about_us: '?מי אנחנו'
+  aramic: 'ארמית'
+  english: 'אנגלית'
+  choose_portion: 'פרשה:'
+  porsion_1: 'בראשית ברא אלהים'
+  porsion_2: 'וייצר יי אלהים את האדם'
+  back_to_bible: 'חזור לתרגום'
+  semitic_heritage: 'מורשת שם'
+  semitic_heritage_text: 'מורשת שם לבני שם בארצות שם'  
