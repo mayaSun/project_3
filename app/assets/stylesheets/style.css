@@ -552,7 +552,15 @@ p{
 }
 
 
- @media (min-width: 1000px) and (max-width: 1200px) {
+ @media (min-width: 1200px)  {
+
+  .next-prev-btn-group  a,
+  .next-prev-btn-group  .fa{
+    font-size: 17px !important;
+  }
+}
+
+ @media (min-width: 1000px) and (max-width: 1199px) {
 
   .next-prev-btn-group  a,
   .next-prev-btn-group  .fa{
