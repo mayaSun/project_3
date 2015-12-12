@@ -537,6 +537,7 @@ p{
 }
 
 .next-prev-btn-group {
+  display: inline; 
   float: right;
   margin-right: 0px;
   padding-right: 0px;
