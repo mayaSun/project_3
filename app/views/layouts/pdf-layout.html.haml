@@ -9,9 +9,25 @@
   %body{:onload => "number_pages"}
     #header
       = wicked_pdf_image_tag '/images/file-header.png', class: 'image'
-      .header-content-div-header
-        מורשת שמית | التراث سامية | Semitic Heritage
-      .header-content-div-text 
-        https://semitic-heritage.herokuapp.com/
+      .header-content-div-header-ar{:class => header_class_by_orientation(@orientation)}
+        التراث سامية
+      .header-content-div-text-ar{:class => header_text_class_by_orientation(@orientation)}
+        التراث سامية لل سامية بيولبي في اراضي سامية
+      .header-content-div-header-he{:class => header_class_by_orientation(@orientation)}
+        מורשת שם
+      .header-content-div-text-he{:class => header_text_class_by_orientation(@orientation)}
+        מורשת שם
+        %br
+        לבני שם 
+        %br
+        בארצות שם  
+      .header-content-div-header-en{:class => header_class_by_orientation(@orientation)}
+        Semitic Heritage
+      .header-content-div-text-en.english{:class => header_text_class_by_orientation(@orientation)} 
+        Semitic Heritage 
+        %br
+        for Semitic Peolpe 
+        %br
+        in Semitic Lands
     #content
       = yield

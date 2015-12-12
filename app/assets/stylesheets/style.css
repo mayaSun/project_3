@@ -362,6 +362,11 @@ p{
   font-size: 18px;
 }
 
+.navbar-nav > li:hover > a{
+  background: transparent;
+  text-decoration: underline;
+}
+
 .download-btn{
   margin-top: 1px;
   margin-left: 5px;

@@ -83,24 +83,80 @@ body {
   font-size: 10px;
 }
 
-  .header-content-div-header {
-    top: 10%;
-    right: 5%;
-    width: 90%;
-    line-height: 1.3;
-    font-size: 35px;
+
+  .header-content-div-header-ar {
+    top: 7%;
+    right: 7%;
+    width: 30%;
+    line-height: 1.3; 
     position: absolute;
-    color:  black;
+    color:  #1E5828; /*Green*/ 
     text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
   }
 
-  .header-content-div-text {
-    top: 55%;
-    left: 5%;
-    width: 50%;
+  .header-content-div-text-ar {
+    top: 40%;
+    right: 14%;
+    width: 15%;      
     line-height: 1.3;
-    font-size: 18px;
     position: absolute;
-    color:  black;
+    color:  #3e2e08; /*Dark brown*/
     text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }
+
+  .header-content-div-header-he {
+    top: 7%;
+    right: 40%;
+    width: 30%;
+    line-height: 1.3;
+    position: absolute;
+    color:  #1E5828; /*Green*/ 
+    text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }
+
+  .header-content-div-text-he {
+    top: 40%;
+    right: 40%;
+    width: 20%;
+    line-height: 1.3;  
+    position: absolute;
+    color:  #3e2e08; /*Dark brown*/
+    text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }
+
+  .header-content-div-header-en {
+    top: 7%;
+    right: 68%;
+    width: 30%;      
+    line-height: 1.3;
+    position: absolute;
+    color:  #1E5828; /*Green*/ 
+    text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }
+
+  .header-content-div-text-en {
+    top: 40%;
+    right: 70%;
+    width: 20%;
+    line-height: 1.3;
+    position: absolute;
+    color:  #3e2e08; /*Dark brown*/
+    text-shadow: -1px 1px 5px white, -1px 1px 5px white, 1px -1px 5px white, 1px -1px 5px white;      
+  }
+
+  .landscape-header{
+    font-size: 32px;
+  }
+  
+  .portrait-header{
+    font-size: 20px;
+  }
+
+
+  .landscape-header-text{
+    font-size: 18px;
+  }
+  
+  .portrait-header-text{
+    font-size: 14px;
   }

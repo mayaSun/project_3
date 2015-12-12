@@ -98,6 +98,22 @@ module ApplicationHelper
     end
   end
 
+  def header_text_class_by_orientation(orientation)
+    if orientation == 'Landscape'
+      'landscape-header-text'
+    else
+      'portrait-header-text'
+    end
+  end
+
+  def header_class_by_orientation(orientation)
+    if orientation == 'Landscape'
+      'landscape-header'
+    else
+      'portrait-header'
+    end
+  end
+
   def is_english(language)
     if language == 'english'
       'english'
