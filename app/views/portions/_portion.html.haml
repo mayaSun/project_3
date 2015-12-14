@@ -1,0 +1,19 @@
+.panel-body
+  .row
+    .col-md-5.pull-right
+      = link_to portion_path(portion) do
+        = portion.book
+        %span
+          = portion.hebrow_name
+    .col-md-2.pull-right  
+      %form.form-horizontal
+        .form-group
+          .row
+            .col-xs-6
+              = link_to portion_path(portion), method: :delete, :data => {:confirm => 'חשוב טוב!!! האם אתה בטוח שברצונך למחוק פרשה זו?'}, class: 'btn btn-remove' do
+                מחק
+                %i.fa.fa-remove          
+            .col-xs-6
+              = link_to edit_portion_path(portion), class: 'btn btn-update' do
+                ערוך  
+                %i.fa.fa-pencil-square-o             

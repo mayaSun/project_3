@@ -6,6 +6,8 @@ he:
   exodus: 'שמות' 
   next_chapter: 'לפרק הבא'
   prev_chapter: 'לפרק הקודם' 
+  next_portion: 'לפרשה הבא'
+  prev_portion: 'לפרשה הקודם' 
   download_version: 'גרסה להדפסה'
   download_version_title_part_1: 'ספר'
   download_version_title_part_2: 'פרק'

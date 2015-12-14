@@ -322,6 +322,13 @@ p{
   height: 40px;
  }
 
+ .content-box .portion-title {
+  font-size: 19px;
+  color: #1E5828; /* Green */
+  height: 40px;
+  line-height: 1;
+ }
+
   .chapters{
     padding-top: 10px;
     width: 100%;
@@ -693,5 +700,9 @@ audio {
   .xs-header-btn{
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .portions_form_input{
+    width: 100%;
   }
 

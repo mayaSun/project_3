@@ -7,13 +7,13 @@
       %br
       %ul.nav.navbar-nav.next-prev-btn-group.hidden-xs
         %li
-          = link_to chapter_path(@chapter.next) do  
-            = t :next_chapter 
+          = link_to portion_path(@portion.next) do  
+            = t :next_portion 
             %i.fa.fa-arrow-left       
         %li
-          = link_to chapter_path(@chapter.prev) do
+          = link_to portion_path(@portion.prev) do
             %i.fa.fa-arrow-right
-            = t :prev_chapter                         
+            = t :prev_portion                         
       %br
       %br
       .visible-sm
@@ -22,28 +22,20 @@
         الترجمة من أسفار موسى الخمسة وفقا ل
         %spen
           = link_to 'كمان', 'http://unbound.biola.edu', target: :_blank      
-      .title
-        .row
-          .col-md-6.pull-right
-            #{display_book_name(@chapter.book, 'arabic')} - نور #{@chapter.order}
-          .col-md-6.pull-right
-            .audio
-              - if false
-                //%audio{:controls => "", :src => @chapter.audio_arabic, :type => "audio/mpeg"}
-                %audio{:controls => "", :src => "/assets/audio/Maya - Are U with me.mp3", :type => "audio/mpeg"}
-                  Your browser does not support the audio element.
-      - @chapter.ordered_sentences.each do |sentence|
+      .portion-title
+        = @portion.arabic_name
+      - @portion.ordered_sentences.each do |sentence|
         .sentence{:class => calculate_sentence_height(sentence)}
           #{sentence.order.to_s}. #{sentence.arabic}
       %ul.nav.navbar-nav.next-prev-btn-group.hidden-xs
         %li
-          = link_to chapter_path(@chapter.next) do  
-            = t :next_chapter 
+          = link_to portion_path(@portion.next) do  
+            = t :next_portion 
             %i.fa.fa-arrow-left       
         %li
-          = link_to chapter_path(@chapter.prev) do
+          = link_to portion_path(@portion.prev) do
             %i.fa.fa-arrow-right
-            = t :prev_chapter        
+            = t :prev_portion        
     .col-sm-4.col-md-4.pull-right
       .hidden-xs
         %br
@@ -53,19 +45,9 @@
           %br      
       .small-title
         מחמש חומשי תורה אשר מיוחסים למשה - בעברית המקורית 
-      .title
-        .row
-          .col-md-8.pull-right
-            #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
-          .col-md-4.pull-right
-            .audio
-              = link_to @chapter.audio_hebrow, target: '_blank' do
-                %i.fa.fa-volume-up          
-              - if false
-                //%audio{:controls => "", :src => @chapter.audio_arabic, :type => "audio/mpeg"}
-                %audio{:controls => "", :src => "/assets/audio/Maya - Are U with me.mp3", :type => "audio/mpeg"}
-                  Your browser does not support the audio element.
-      - @chapter.ordered_sentences.each do |sentence|
+      .portion-title
+        = @portion.hebrow_name
+      - @portion.ordered_sentences.each do |sentence|
         .sentence{:class => calculate_sentence_height(sentence)}
           #{sentence.order.to_s}. #{sentence.hebrow}    
     .col-sm-4.col-md-4.pull-right
@@ -93,9 +75,9 @@
               %span 
                 = link_to 'Mechon Mamre','http://www.mechon-mamre.org/', target: :_blank 
             .title.english
-              #{display_book_name(@chapter.book, 'english')} - Chapter #{@chapter.order}            
+              = @portion.english_name            
             .english.small-font
-              - @chapter.ordered_sentences.each do |sentence|
+              - @portion.ordered_sentences.each do |sentence|
                 .sentence{:class => calculate_sentence_height(sentence)}
                   #{sentence.order.to_s}. #{sentence.english}
           / English Ends        
@@ -104,22 +86,22 @@
             .text-paddind
             .small-title
               מחמש חומשי תורה אשר מיוחסים למשה - בעברית המקורית 
-            .title
-              #{display_book_name(@chapter.book, 'hebrow')} - פרק #{@chapter.order}
-            - @chapter.ordered_sentences.each do |sentence|
+            .portion-title
+              = @portion.hebrow_name
+            - @portion.ordered_sentences.each do |sentence|
               .sentence{:class => calculate_sentence_height(sentence)}
                 #{sentence.order.to_s}. #{sentence.aramic}          
           / Aramic End           
           / Interpretation start
           #tab-interpretation.tab-pane
             .audio
-            = @chapter.meaning
+            = @portion.meaning
           / Interpretation End
         / Tab Content Ends
       / Tabs Ends           
   .pull-left
     .btn-group
-      = link_to  set_download_variables_chapter_path(@chapter), remote: true, class: 'download-btn' do
+      = link_to  set_download_variables_portion_path(@portion), remote: true, class: 'download-btn' do
         = t :download_version
   %br
   %br

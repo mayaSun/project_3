@@ -1,0 +1,11 @@
+%br
+.row 
+  .col-md-12   
+    .panel.panel-smart
+      %h3.panel-title
+        = link_to 'הוסף פרשה חדשה לאתר +' , new_portion_path
+%br 
+.panel-smart     
+  - @portions.each do |portion|
+    = render 'portion', portion: portion
+  

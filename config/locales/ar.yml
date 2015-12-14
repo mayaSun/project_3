@@ -6,6 +6,8 @@ ar:
   exodus: 'هجرة جماعية'
   next_chapter: 'التالى باب'
   prev_chapter: 'سابق باب'
+  next_portion: 'الجزء القادم'
+  prev_portion: 'سابق القادم'
   download_version: 'تحميل النسخة' 
   download_version_title_part_1: 'كتاب'
   download_version_title_part_2: 'باب'

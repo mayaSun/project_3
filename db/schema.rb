@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115141636) do
+ActiveRecord::Schema.define(version: 20151213100355) do
 
   create_table "chapters", force: :cascade do |t|
     t.integer "order"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20151115141636) do
     t.text    "meaning"
     t.string  "audio_hebrow"
     t.string  "audio_arabic"
+    t.string  "slug"
+  end
+
+  create_table "portions", force: :cascade do |t|
+    t.text    "hebrow_name"
+    t.text    "arabic_name"
+    t.text    "english_name"
+    t.text    "meaning"
+    t.integer "first_sentence_id"
+    t.integer "last_sentence_id"
+    t.string  "book"
     t.string  "slug"
   end
 
