@@ -99,7 +99,7 @@ class PortionsController <ApplicationController
 
 
   def select_portion
-    @portion = Portion.find_by(slug: params[:id])
+    @portion = Portion.find_by(slug: params[:choosen_portion])
     render :show
   end
 

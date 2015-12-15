@@ -176,4 +176,24 @@ module ApplicationHelper
     end
   end
 
+  def portions_for_select
+    if session[:locale] == 'en'  
+      Portion.all_ordered.map{ |portion| [portion.english_name, portion.slug]}
+    elsif session[:locale] == 'he'
+      Portion.all_ordered.map{ |portion| [portion.hebrow_name, portion.slug]}
+    else
+      Portion.all_ordered.map{ |portion| [portion.arabic_name, portion.slug]}
+    end 
+  end
+
+  def portion_name(portion)
+    if session[:locale] == 'en'  
+      portion.english_name
+    elsif session[:locale] == 'he'
+      portion.hebrow_name
+    else
+      portion.arabic_name
+    end 
+  end
+
 end

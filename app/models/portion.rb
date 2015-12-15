@@ -24,15 +24,14 @@
   end
 
   def next
-    Portion.first
-    #Portion.where(book: book).where(order: order + 1).first || 
-      #((book == 'genesis') ? Chapter.where(book: 'exodus').where(order: 1).first : Chapter.where(book: 'genesis').where(order: 1).first) 
+    index = Portion.all_ordered.find_index(self)
+    Portion.all_ordered[index+1] || Portion.all_ordered.first
+    
   end
 
   def prev
-    Portion.first
-    #Chapter.where(book: book).where(order: order - 1).first || 
-    #((book == 'genesis') ? Chapter.where(book: 'exodus').where(order: 40).first : Chapter.where(book: 'genesis').where(order: 50).first) 
+    index = Portion.all_ordered.find_index(self)
+    Portion.all_ordered[index-1] || Portion.all_ordered.last
   end
 
   def self.book_chapters(book)
