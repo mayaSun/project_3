@@ -1,6 +1,6 @@
 class ChaptersController <ApplicationController
 
-  before_action  :ensure_admin, only: 
+  before_action  :ensure_admin, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def show
     @chapter = Chapter.find_by(slug: params[:id])

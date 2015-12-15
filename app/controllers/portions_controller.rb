@@ -1,6 +1,6 @@
 class PortionsController <ApplicationController
 
-  before_action  :ensure_admin, only: 
+  before_action  :ensure_admin, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def show
     @portion = Portion.find_by(slug: params[:id])
