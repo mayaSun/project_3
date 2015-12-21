@@ -28,5 +28,5 @@
         .row
           .col-md-1.col-sm-2{:class => pull_left_or_right()}
             = t :choose_portion
-          .col-md-11.col-sm-10{:class => pull_left_or_right()}
+          .col-md-11.col-sm-9{:class => pull_left_or_right()}
             = select_tag 'choosen_portion', options_for_select(portions_for_select, @chapter ? Portion.first : @portion.slug), class: 'select-btn' ,onchange: 'this.form.submit()'
