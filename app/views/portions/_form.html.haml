@@ -5,35 +5,36 @@
   .panel-body  
     = bootstrap_form_for @portion, layout: :horizontal do |f|
       .row
-        .col-md-4.pull-right
+        .col-md-4.col-sm-5.pull-right
           = f.select 'book', options_for_select([ "genesis", "exodus" ], @portion.book), label: 'ספר:',label_col: "col-sm-5.col-sm-push-7", control_col: "col-sm-7"    
       .form-group
         %label.control-label.col-md-2.pull-right
           פסוק ראשון:
-        .col-md-1.pull-right
+        .col-md-1.col-sm-2.pull-right
           = text_field_tag 'first_chapter',nil, placeholder: 'פרק', class: 'portions_form_input'  
-        .col-md-1.pull-right
+        .col-md-1.col-sm-2.pull-right
           = text_field_tag 'first_sentence',nil, placeholder: 'פסוק', class: 'portions_form_input'  
+      .form-group  
         %label.control-label.col-md-2.pull-right
           פסוק אחרון:
-        .col-md-1.pull-right
+        .col-md-1.col-sm-2.pull-right
           = text_field_tag 'last_chapter',nil, placeholder: 'פרק', class: 'portions_form_input'  
-        .col-md-1.pull-right
+        .col-md-1.col-sm-2.pull-right
           = text_field_tag 'last_sentence',nil, placeholder: 'פסוק', class: 'portions_form_input'                      
       .form-group
         %label.control-label.col-md-2.pull-right
           שם בעברית:
-        .col-md-4.pull-right
+        .col-md-4.col-sm-8.pull-right
           = f.text_area :hebrow_name, hide_label: true, class: 'form-control', rows: "1"
       .form-group
         %label.control-label.col-md-2.pull-right
           שם בערבית:
-        .col-md-4.pull-right
+        .col-md-4.col-sm-8.pull-right
           = f.text_area :arabic_name, hide_label: true, class: 'form-control', rows: "1"
       .form-group
         %label.control-label.col-md-2.pull-right
           שם באנגלית:
-        .col-md-4.pull-right
+        .col-md-4.col-sm-8.pull-right
           = f.text_area :english_name, hide_label: true, class: 'english form-control', rows: "1"          
       = f.text_area :meaning, label: 'פירוש:',label_col: "col-sm-2.col-sm-push-10", control_col: "col-sm-10", rows: 10
       = f.button class: 'btn btn-add', id: 'chapter-form-submit' do
