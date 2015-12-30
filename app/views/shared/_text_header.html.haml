@@ -1,6 +1,6 @@
 .chapter-header.pull-right
   .row
-    .col-sm-4.col-md-4.pull-right
+    .col-sm-5.col-md-4.pull-right
       = form_tag select_chapter_path, method: :get, class: "form-horizontal form-horizontal-chapter" do
         .row
           .col-md-7.col-sm-7{:class => pull_left_or_right()}
@@ -21,7 +21,7 @@
                 = render partial: '/chapters/chapter_select', locals: {book: @chapter ? @chapter.book : @portion.book, chapter: @chapter ? @chapter.order : 1}
       .visible-xs
         %br                      
-    .col-sm-8.col-md-8.pull-right
+    .col-sm-7.col-md-8.pull-right
       = form_tag select_portion_path, method: :get, class: "form-horizontal form-horizontal-chapter" do
         .text-header{:class => pull_left_or_right()}
           = t :choose_portion
