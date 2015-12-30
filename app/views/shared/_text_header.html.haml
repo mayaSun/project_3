@@ -8,7 +8,7 @@
               = t :choose_book
             .text-header{:class => pull_left_or_right()}
               = select_tag 'choosen_book', options_for_select([["#{t :genesis}", 'genesis'], ["#{t :exodus}",'exodus'] ], @chapter ? @chapter.book : @portion.book), class: 'select-btn'
-          .col-md-5.col-sm-4{:class => pull_left_or_right()}
+          .col-md-5.col-sm-5{:class => pull_left_or_right()}
             - if session[:locale] != 'en'             
               .text-header{:class => pull_left_or_right()}
                 = t :choose_chapter
