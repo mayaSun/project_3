@@ -11,16 +11,16 @@
         %label.control-label.col-md-2.pull-right
           פסוק ראשון:
         .col-md-1.col-sm-2.pull-right
-          = text_field_tag 'first_chapter',nil, placeholder: 'פרק', class: 'portions_form_input'  
+          = text_field_tag 'first_chapter',@portion.first_sentence_id ? Sentence.find(@portion.first_sentence_id).chapter.order : nil, placeholder: 'פרק', class: 'portions_form_input'  
         .col-md-1.col-sm-2.pull-right
-          = text_field_tag 'first_sentence',nil, placeholder: 'פסוק', class: 'portions_form_input'  
+          = text_field_tag 'first_sentence',@portion.first_sentence_id ? Sentence.find(@portion.first_sentence_id).order : nil, placeholder: 'פסוק', class: 'portions_form_input'  
       .form-group  
         %label.control-label.col-md-2.pull-right
           פסוק אחרון:
         .col-md-1.col-sm-2.pull-right
-          = text_field_tag 'last_chapter',nil, placeholder: 'פרק', class: 'portions_form_input'  
+          = text_field_tag 'last_chapter',@portion.last_sentence_id ? Sentence.find(@portion.last_sentence_id).chapter.order : nil, placeholder: 'פרק', class: 'portions_form_input'  
         .col-md-1.col-sm-2.pull-right
-          = text_field_tag 'last_sentence',nil, placeholder: 'פסוק', class: 'portions_form_input'                      
+          = text_field_tag 'last_sentence',@portion.last_sentence_id ? Sentence.find(@portion.last_sentence_id).order : nil, placeholder: 'פסוק', class: 'portions_form_input'                      
       .form-group
         %label.control-label.col-md-2.pull-right
           שם בעברית:

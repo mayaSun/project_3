@@ -34,7 +34,6 @@ class PortionsController <ApplicationController
       end
     else
       flash[:error] = "The portion #{@portion.slug} was NOT added"
-      @portions = portion.all
       render :new
     end  
   end
@@ -54,10 +53,14 @@ class PortionsController <ApplicationController
       if last_sentence
         @portion.update_attributes(last_sentence_id: last_sentence.id)
       end
-      redirect_to portions_path
+      if !first_sentence || !last_sentence
+        flash[:error] = "The portion #{@portion.slug} was NOT updated, sentence was not found"
+        render :edit
+      else
+        redirect_to portions_path
+      end
     else
-      flash[:error] = "The portion #{@portion.slug} was NOT added"
-      @portions = portion.all
+      flash[:error] = "The portion #{@portion.slug} was NOT updated"
       render :edit
     end 
   end

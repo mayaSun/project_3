@@ -74,7 +74,7 @@
               Translation from the Five books of Moses according to: 
               %span 
                 = link_to 'Mechon Mamre','http://www.mechon-mamre.org/', target: :_blank 
-            .title.english
+            .title.english.portion-title
               = @portion.english_name            
             .english.small-font
               - @portion.ordered_sentences.each do |sentence|
