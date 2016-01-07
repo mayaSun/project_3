@@ -38,7 +38,7 @@
   end
 
   def ordered_sentences
-    sentences.order(:order)
+    sentences.order(:order) ? sentences.order(:order) : []
   end
 
   def next

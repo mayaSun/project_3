@@ -9,16 +9,24 @@
   def ordered_sentences
     first_sentence = Sentence.find(first_sentence_id)
     last_sentence = Sentence.find(last_sentence_id)
+    sentences = [{}]
     if first_sentence.chapter != last_sentence.chapter
-      sentences = first_sentence.chapter.ordered_sentences[first_sentence.order-1..0]
+      i=0
+      sentences[i]["order"] = first_sentence.chapter.order 
+      sentences[i]["sentences"] = first_sentence.chapter.ordered_sentences[first_sentence.order-1..0]
       chapter = first_sentence.chapter.next
       while chapter != last_sentence.chapter
-        sentences += chapter.ordered_sentences
+        i = i+1
+        sentences[i]["order"] = chapter.order 
+        sentences[i]["sentences"] = chapter.ordered_sentences
         chapter = chapter.next
       end
-      sentences += last_sentence.chapter.ordered_sentences[0..last_sentence.order-1]
+      i = i+1
+      sentences[i]["order"] = last_sentence.chapter.order
+      sentences[i]["sentences"] = last_sentence.chapter.ordered_sentences[0..last_sentence.order-1]
     else
-      sentences = first_sentence.chapter.ordered_sentences[first_sentence.order-1..last_sentence.order-1]
+      sentences[0]["order"] = first_sentence.chapter.order
+      sentences[0]["sentences"] = first_sentence.chapter.ordered_sentences[first_sentence.order-1..last_sentence.order-1]
     end
     return sentences
   end

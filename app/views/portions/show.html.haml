@@ -24,9 +24,12 @@
           = link_to 'كمان', 'http://unbound.biola.edu', target: :_blank      
       .portion-title
         = @portion.arabic_name
-      - @portion.ordered_sentences.each do |sentence|
-        .sentence{:class => calculate_sentence_height(sentence)}
-          #{sentence.order.to_s}. #{sentence.arabic}
+      - @portion.ordered_sentences.each do |chapter|
+        .title-portion-chapter
+          #{display_book_name(@portion.book, 'arabic')} باب #{chapter["order"]}  
+        - chapter["sentences"].each do |sentence|               
+          .sentence{:class => calculate_sentence_height(sentence)}
+            #{sentence.order.to_s}. #{sentence.arabic}
       %ul.nav.navbar-nav.next-prev-btn-group.hidden-xs
         %li
           = link_to portion_path(@portion.next) do  
@@ -47,9 +50,12 @@
         מחמש חומשי תורה אשר מיוחסים למשה - בעברית המקורית 
       .portion-title
         = @portion.hebrow_name
-      - @portion.ordered_sentences.each do |sentence|
-        .sentence{:class => calculate_sentence_height(sentence)}
-          #{sentence.order.to_s}. #{sentence.hebrow}    
+      - @portion.ordered_sentences.each do |chapter|
+        .title-portion-chapter
+          #{display_book_name(@portion.book, 'hebrow')} פרק #{chapter["order"]}  
+        - chapter["sentences"].each do |sentence|               
+          .sentence{:class => calculate_sentence_height(sentence)}
+            #{sentence.order.to_s}. #{sentence.hebrow}  
     .col-sm-4.col-md-4.pull-right
       / Tabs Starts
       .tabs-panel
@@ -77,9 +83,12 @@
             .title.english.portion-title
               = @portion.english_name            
             .english.small-font
-              - @portion.ordered_sentences.each do |sentence|
-                .sentence{:class => calculate_sentence_height(sentence)}
-                  #{sentence.order.to_s}. #{sentence.english}
+              - @portion.ordered_sentences.each do |chapter|
+                .title-portion-chapter
+                  Book of #{display_book_name(@portion.book, 'english')} Chapter #{chapter["order"]}  
+                - chapter["sentences"].each do |sentence|               
+                  .sentence{:class => calculate_sentence_height(sentence)}
+                    #{sentence.order.to_s}. #{sentence.english}
           / English Ends        
           / Aramic Starts
           #tab-aramic.tab-pane
@@ -88,9 +97,12 @@
               מחמש חומשי תורה אשר מיוחסים למשה - בעברית המקורית 
             .portion-title
               = @portion.hebrow_name
-            - @portion.ordered_sentences.each do |sentence|
-              .sentence{:class => calculate_sentence_height(sentence)}
-                #{sentence.order.to_s}. #{sentence.aramic}          
+            - @portion.ordered_sentences.each do |chapter|
+              .title-portion-chapter
+                #{display_book_name(@portion.book, 'hebrow')} פרק #{chapter["order"]} 
+              - chapter["sentences"].each do |sentence|               
+                .sentence{:class => calculate_sentence_height(sentence)}
+                  #{sentence.order.to_s}. #{sentence.aramic}          
           / Aramic End           
           / Interpretation start
           #tab-interpretation.tab-pane
